@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#060412">
+<meta property="og:title" content="🎁 יש לך הפתעה מיוחדת!">
+<meta property="og:description" content="מישהו שמאמין בך שלח לך שובר לחוויית הקלטה בלתי נשכחת עם יקיר כהן">
+<meta property="og:image" content="https://www.yakircohen.com/wp-content/uploads/2023/02/LOGO-YAKIR-COHEN-%D7%99%D7%99%D7%A2%D7%95%D7%A5-%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%9C%D7%99-%D7%A8%D7%91-%D7%AA%D7%97%D7%95%D7%9E%D7%99.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<title>🎁 יש לך הפתעה מיוחדת | יקיר כהן הפקות</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Frank+Ruhl+Libre:wght@300;400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#060412; --bg2:#0a0718;
+  --gold:#c9a84c; --gold2:#f0d47a; --goldA:rgba(201,168,76,0.15);
+  --border:rgba(201,168,76,0.2); --border2:rgba(255,255,255,0.08);
+  --text:#ede8ff; --muted:rgba(237,232,255,0.45);
+  --surface:rgba(255,255,255,0.05);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{height:100%;}
+body{font-family:'Heebo',sans-serif;background:var(--bg);color:var(--text);
+  direction:rtl;min-height:100%;overflow-x:hidden;}
+
+/* Noise */
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.25;
+  background:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.02'/%3E%3C/svg%3E");}
+
+/* Stars background */
+.stars{position:fixed;inset:0;overflow:hidden;z-index:0;pointer-events:none;}
+.star{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--d,3s) ease-in-out infinite;}
+@keyframes twinkle{0%,100%{opacity:0.15;transform:scale(1);}50%{opacity:var(--op,.7);transform:scale(1.2);}}
+
+/* ══ ENVELOPE SCENE ══ */
+#envScene{
+  position:fixed;inset:0;z-index:10;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:20px;
+  transition:opacity 0.8s, transform 0.8s;
+}
+#envScene.leaving{opacity:0;transform:scale(0.95);}
+
+.env-glow{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 50%,rgba(201,168,76,0.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+
+.env-wrap{cursor:pointer;user-select:none;-webkit-user-select:none;}
+.env-wrap:active{transform:scale(0.97);}
+
+/* Envelope card */
+.env-card{
+  width:min(340px,85vw);
+  background:linear-gradient(145deg,#1a1500,#0d0a00);
+  border:2px solid rgba(201,168,76,0.35);
+  border-radius:18px;
+  padding:32px 28px;
+  box-shadow:0 0 0 1px rgba(201,168,76,0.1),
+             0 20px 80px rgba(0,0,0,0.8),
+             0 0 60px rgba(201,168,76,0.08);
+  position:relative;overflow:hidden;
+  transition:transform 0.15s;
+}
+.env-card:hover{transform:translateY(-4px);}
+.env-card::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,0.09) 0%,transparent 60%);
+  pointer-events:none;}
+
+/* Envelope flap */
+.env-flap{
+  position:absolute;top:0;left:0;right:0;height:50%;
+  background:linear-gradient(160deg,#2a1f00,#1a1200);
+  border-bottom:1px solid rgba(201,168,76,0.2);
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top center;
+  transition:transform 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+.env-card.opened .env-flap{transform:rotateX(-180deg);}
+
+/* Wax seal */
+.env-seal{
+  width:80px;height:80px;border-radius:50%;
+  background:radial-gradient(circle at 40% 35%,#c9a84c,#6b4800);
+  border:3px solid rgba(201,168,76,0.5);
+  display:flex;align-items:center;justify-content:center;
+  margin:20px auto 18px;
+  box-shadow:0 4px 20px rgba(201,168,76,0.35),inset 0 2px 6px rgba(255,255,255,0.1);
+  font-size:2rem;
+  transition:transform 0.3s;
+  position:relative;z-index:1;
+}
+.env-wrap:hover .env-seal{transform:rotate(5deg) scale(1.05);}
+
+/* Env lines (letter peek) */
+.env-lines{display:flex;flex-direction:column;gap:7px;margin-bottom:6px;position:relative;z-index:1;}
+.env-line{height:3px;border-radius:3px;background:rgba(201,168,76,0.18);}
+
+/* Hint text */
+.env-hint{
+  font-family:'Frank Ruhl Libre',serif;font-size:0.9rem;font-weight:400;
+  color:rgba(201,168,76,0.6);text-align:center;margin-top:20px;
+  animation:pulse 2.4s ease-in-out infinite;letter-spacing:0.3px;
+}
+@keyframes pulse{0%,100%{opacity:0.6;}50%{opacity:1;}}
+
+/* From badge */
+.env-from{
+  position:absolute;top:14px;left:14px;
+  padding:4px 10px;border-radius:100px;
+  background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);
+  font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.62rem;
+  letter-spacing:1.5px;text-transform:uppercase;color:rgba(201,168,76,0.6);
+}
+
+/* ══ CONFETTI CANVAS ══ */
+#confCvs{position:fixed;inset:0;pointer-events:none;z-index:9;}
+
+/* ══ VOUCHER SCENE ══ */
+#voucherScene{
+  position:relative;z-index:10;
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  padding:40px 20px 60px;
+  min-height:100vh;
+}
+
+.vc-intro{
+  text-align:center;margin-bottom:32px;
+  animation:fadeUp 0.8s ease both;
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+
+.vc-emojis{font-size:1.8rem;letter-spacing:4px;margin-bottom:8px;}
+.vc-headline{
+  font-family:'Frank Ruhl Libre',serif;font-weight:900;
+  font-size:clamp(1.6rem,5vw,2.4rem);
+  color:var(--gold2);
+  text-shadow:0 4px 30px rgba(201,168,76,0.3);
+  line-height:1.15;
+  margin-bottom:4px;
+}
+.vc-sub{font-size:0.88rem;color:var(--muted);line-height:1.5;}
+
+/* ══ VOUCHER CARD ══ */
+.voucher-wrap{
+  width:100%;max-width:600px;
+  border-radius:18px;overflow:hidden;
+  box-shadow:0 0 0 1px rgba(201,168,76,0.18),
+             0 40px 120px rgba(0,0,0,0.85),
+             0 0 80px rgba(201,168,76,0.06);
+  animation:scaleIn 0.7s cubic-bezier(0.34,1.56,0.64,1) 0.2s both;
+  margin-bottom:32px;
+}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.85);}to{opacity:1;transform:scale(1);}}
+
+/* Voucher CSS (same as creator.html) */
+.voucher{padding:32px 36px;min-height:320px;display:flex;flex-direction:column;position:relative;overflow:hidden;}
+.vbg0{background:linear-gradient(135deg,#060412 0%,#0e0b28 50%,#060412 100%);}
+.vbg1{background:linear-gradient(135deg,#12062a 0%,#2d0d4e 50%,#1a0830 100%);}
+.vbg2{background:linear-gradient(135deg,#071022 0%,#0e2040 60%,#071022 100%);}
+.vbg3{background:linear-gradient(135deg,#1a0c00 0%,#3d1f00 50%,#1a0c00 100%);}
+.vbg4{background:linear-gradient(160deg,#f5f0e8 0%,#ede4d0 100%);}
+
+.voucher::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 20% 20%,rgba(201,168,76,0.07) 0%,transparent 60%),
+             radial-gradient(ellipse at 80% 80%,rgba(201,168,76,0.04) 0%,transparent 50%);}
+.vbg4::before{background:radial-gradient(ellipse at 80% 20%,rgba(107,72,0,0.06) 0%,transparent 60%);}
+
+.v-bdr{position:absolute;inset:12px;border:1px solid rgba(201,168,76,0.22);border-radius:8px;pointer-events:none;}
+.vbg4 .v-bdr{border-color:rgba(0,0,0,0.1);}
+.v-cnr{position:absolute;width:16px;height:16px;border-color:rgba(201,168,76,0.45);border-style:solid;}
+.v-cnr.tl{top:8px;right:8px;border-width:2px 0 0 2px;}
+.v-cnr.tr{top:8px;left:8px;border-width:2px 2px 0 0;}
+.v-cnr.bl{bottom:8px;right:8px;border-width:0 0 2px 2px;}
+.v-cnr.br{bottom:8px;left:8px;border-width:0 2px 2px 0;}
+.vbg4 .v-cnr{border-color:rgba(0,0,0,0.18);}
+
+.v-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;position:relative;z-index:1;}
+.v-logo{display:flex;align-items:center;gap:9px;}
+.v-mic-ico{font-size:1.4rem;filter:drop-shadow(0 0 7px rgba(201,168,76,0.45));}
+.v-brand{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);line-height:1.3;}
+.v-brand small{display:block;font-size:0.52rem;color:rgba(201,168,76,0.5);letter-spacing:1.5px;}
+.vbg4 .v-brand{color:#6b4800;}.vbg4 .v-brand small{color:rgba(107,72,0,0.45);}
+.v-badge{padding:4px 12px;border-radius:100px;border:1px solid rgba(201,168,76,0.3);background:rgba(201,168,76,0.09);font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold2);}
+.vbg4 .v-badge{border-color:rgba(107,72,0,0.25);background:rgba(107,72,0,0.07);color:#6b4800;}
+.v-body{flex:1;position:relative;z-index:1;}
+.v-tolbl{font-size:0.62rem;color:var(--muted);font-family:'Rajdhani',sans-serif;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;}
+.vbg4 .v-tolbl{color:rgba(0,0,0,0.38);}
+.v-name{font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:2.7rem;line-height:1;color:var(--gold2);margin-bottom:12px;text-shadow:0 2px 20px rgba(201,168,76,0.28);}
+.vbg4 .v-name{color:#3d2800;text-shadow:none;}
+.v-pkgname{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:1.1rem;color:rgba(237,232,255,0.85);margin-bottom:3px;}
+.vbg4 .v-pkgname{color:rgba(0,0,0,0.62);}
+.v-pkgdesc{font-size:0.76rem;color:var(--muted);margin-bottom:14px;line-height:1.5;}
+.vbg4 .v-pkgdesc{color:rgba(0,0,0,0.38);}
+.v-msg{font-family:'Frank Ruhl Libre',serif;font-size:0.9rem;font-weight:400;color:rgba(237,232,255,0.68);line-height:1.65;font-style:italic;padding:11px 13px;border-right:3px solid rgba(201,168,76,0.35);background:rgba(255,255,255,0.03);border-radius:0 7px 7px 0;margin-bottom:14px;}
+.vbg4 .v-msg{color:rgba(0,0,0,0.52);border-color:rgba(107,72,0,0.28);background:rgba(0,0,0,0.03);}
+.v-ft{display:flex;align-items:flex-end;justify-content:space-between;position:relative;z-index:1;padding-top:13px;border-top:1px solid rgba(255,255,255,0.06);}
+.vbg4 .v-ft{border-color:rgba(0,0,0,0.08);}
+.v-meta{font-family:'Rajdhani',sans-serif;font-weight:600;font-size:0.65rem;letter-spacing:0.4px;color:var(--muted);line-height:1.65;}
+.vbg4 .v-meta{color:rgba(0,0,0,0.38);}
+.v-from{text-align:left;}
+.v-fromlbl{display:block;font-family:'Rajdhani',sans-serif;font-size:0.58rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:1px;}
+.v-fromname{font-family:'Frank Ruhl Libre',serif;font-size:0.85rem;color:rgba(201,168,76,0.7);}
+.vbg4 .v-fromlbl{color:rgba(0,0,0,0.35);}.vbg4 .v-fromname{color:rgba(107,72,0,0.55);}
+
+/* ══ INFO CARDS ══ */
+.info-cards{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:12px;width:100%;max-width:600px;margin-bottom:28px;
+  animation:fadeUp 0.8s ease 0.4s both;
+}
+.ic{
+  background:var(--surface);border:1px solid var(--border2);
+  border-radius:13px;padding:16px;display:flex;align-items:center;gap:12px;
+  transition:border-color 0.2s;
+}
+.ic:hover{border-color:var(--border);}
+.ic-icon{font-size:1.4rem;flex-shrink:0;}
+.ic-label{font-family:'Rajdhani',sans-serif;font-size:0.6rem;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);margin-bottom:2px;}
+.ic-val{font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.3;}
+
+/* ══ ACTION BUTTONS ══ */
+.actions{
+  display:flex;flex-direction:column;gap:10px;
+  width:100%;max-width:600px;
+  animation:fadeUp 0.8s ease 0.55s both;
+}
+.act-primary{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px;border-radius:14px;border:none;cursor:pointer;
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:#fff;font-family:'Heebo',sans-serif;font-weight:900;font-size:1rem;
+  text-decoration:none;transition:all 0.2s;
+  box-shadow:0 4px 20px rgba(37,211,102,0.25);
+}
+.act-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,0.35);}
+.act-primary:active{transform:translateY(0);}
+
+.act-row{display:flex;gap:10px;}
+.act-sec{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:7px;
+  padding:13px;border-radius:12px;
+  border:1px solid var(--border2);background:var(--surface);
+  color:var(--text);font-family:'Heebo',sans-serif;font-weight:600;
+  font-size:0.85rem;cursor:pointer;text-decoration:none;
+  transition:all 0.2s;
+}
+.act-sec:hover{border-color:var(--border);background:rgba(255,255,255,0.07);}
+
+/* ══ CODE REVEAL ══ */
+.code-reveal{
+  background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.18);
+  border-radius:13px;padding:16px 20px;
+  width:100%;max-width:600px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;margin-bottom:16px;
+  animation:fadeUp 0.8s ease 0.7s both;
+}
+.cr-left{}
+.cr-lbl{font-family:'Rajdhani',sans-serif;font-size:0.58rem;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);display:block;margin-bottom:3px;}
+.cr-code{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.35rem;
+  letter-spacing:3.5px;color:var(--gold2);}
+.cr-copy{padding:6px 12px;border-radius:8px;border:1px solid var(--border);
+  background:transparent;color:var(--muted);font-family:'Heebo',sans-serif;
+  font-size:0.72rem;cursor:pointer;transition:all 0.18s;white-space:nowrap;}
+.cr-copy:hover{border-color:var(--gold);color:var(--gold);}
+
+/* ══ FOOTER ══ */
+.v-footer{
+  margin-top:40px;text-align:center;
+  animation:fadeUp 0.8s ease 0.8s both;
+}
+.v-footer-brand{
+  font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.7rem;
+  letter-spacing:3px;text-transform:uppercase;color:rgba(201,168,76,0.4);
+  margin-bottom:4px;
+}
+.v-footer-sub{font-size:0.72rem;color:var(--muted);}
+
+/* ══ ERROR STATE ══ */
+#errScene{
+  position:fixed;inset:0;z-index:10;
+  display:none;flex-direction:column;align-items:center;justify-content:center;
+  padding:20px;text-align:center;
+}
+.err-icon{font-size:3rem;margin-bottom:16px;}
+.err-title{font-family:'Frank Ruhl Libre',serif;font-size:1.5rem;font-weight:900;
+  color:var(--gold2);margin-bottom:8px;}
+.err-sub{font-size:0.85rem;color:var(--muted);line-height:1.6;}
+
+/* ══ TOAST ══ */
+.toast{position:fixed;bottom:28px;left:50%;
+  transform:translateX(-50%) translateY(16px);
+  background:rgba(18,16,38,0.96);border:1px solid var(--border);border-radius:100px;
+  padding:10px 22px;font-size:0.84rem;font-weight:600;color:var(--text);
+  z-index:999;transition:all 0.28s;opacity:0;pointer-events:none;
+  backdrop-filter:blur(10px);white-space:nowrap;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+</style>
+</head>
+<body>
+
+<!-- Stars -->
+<div class="stars" id="stars"></div>
+
+<!-- Confetti canvas -->
+<canvas id="confCvs"></canvas>
+
+<!-- ══ ENVELOPE SCENE ══ -->
+<div id="envScene">
+  <div class="env-glow"></div>
+  <div class="env-wrap" onclick="openEnvelope()">
+    <div class="env-card" id="envCard">
+      <div class="env-flap"></div>
+      <div class="env-from" id="envFrom">🎁 מתנה מיוחדת</div>
+      <div class="env-seal">🎙</div>
+      <div class="env-lines">
+        <div class="env-line" style="width:70%;"></div>
+        <div class="env-line" style="width:85%;"></div>
+        <div class="env-line" style="width:55%;"></div>
+        <div class="env-line" style="width:75%;"></div>
+      </div>
+    </div>
+    <p class="env-hint">לחץ על החותמת לפתיחה ✨</p>
+  </div>
+</div>
+
+<!-- ══ VOUCHER SCENE ══ -->
+<div id="voucherScene">
+  <div class="vc-intro">
+    <div class="vc-emojis">🎉 🎤 ✨</div>
+    <div class="vc-headline" id="vcHeadline">יש לך הפתעה מיוחדת!</div>
+    <div class="vc-sub" id="vcSub">שובר הקלטה מחכה לך</div>
+  </div>
+
+  <!-- Voucher card -->
+  <div class="voucher-wrap" id="voucherWrap"></div>
+
+  <!-- Code -->
+  <div class="code-reveal" id="codeReveal" style="display:none;">
+    <div class="cr-left">
+      <span class="cr-lbl">קוד השובר שלך</span>
+      <div class="cr-code" id="crCode">-</div>
+    </div>
+    <button class="cr-copy" onclick="copyCode()">העתק קוד</button>
+  </div>
+
+  <!-- Info cards -->
+  <div class="info-cards" id="infoCards"></div>
+
+  <!-- Actions -->
+  <div class="actions">
+    <a class="act-primary" id="waBtn" href="#" target="_blank">
+      📞 תאם סשן עם יקיר עכשיו
+    </a>
+    <div class="act-row">
+      <button class="act-sec" onclick="saveImg()">💾 שמור תמונה</button>
+      <button class="act-sec" onclick="shareVoucher()">📤 שתף</button>
+    </div>
+  </div>
+
+  <div class="v-footer">
+    <div class="v-footer-brand">🎙 יקיר כהן הפקות</div>
+    <div class="v-footer-sub">YAKIR COHEN PRODUCTIONS</div>
+  </div>
+</div>
+
+<!-- ══ ERROR SCENE ══ -->
+<div id="errScene">
+  <div class="err-icon">🎙</div>
+  <div class="err-title">שובר לא נמצא</div>
+  <div class="err-sub">הקישור שקיבלת עשוי להיות לא תקין.<br>פנה אל יקיר כהן לקבלת קישור חדש.</div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ══════════════════════════════════════
+   CONFIG
+══════════════════════════════════════ */
+const CFG = {
+  WA_YAKIR: '972501234567',  // ← מספר הוואטסאפ של יקיר
+  STUDIO_NAME: 'יקיר כהן הפקות',
+  PKGS: {
+    0: { name:'חבילת בסיס',   price:'₪990',   desc:'2 שעות הקלטה · מיקס · מסטרינג' },
+    1: { name:'חבילת Silver', price:'₪1,480', desc:'4 שעות הקלטה · מיקס · מסטרינג · וידאו' },
+    2: { name:'חבילת VIP 👑', price:'₪2,380', desc:'יום שלם · מיקס · מסטרינג · הפקה מלאה' },
+  },
+};
+
+/* ══════════════════════════════════════
+   STARS
+══════════════════════════════════════ */
+function initStars() {
+  const c = document.getElementById('stars');
+  for (let i = 0; i < 80; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const sz = Math.random() * 2.5 + 0.5;
+    s.style.cssText = `width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;
+      --d:${2+Math.random()*4}s;--op:${0.4+Math.random()*0.5};
+      animation-delay:${Math.random()*4}s;`;
+    c.appendChild(s);
+  }
+}
+
+/* ══════════════════════════════════════
+   PARSE DATA
+══════════════════════════════════════ */
+let D = null;
+
+function parseData() {
+  const params = new URLSearchParams(location.search);
+  const raw = params.get('d');
+  if (!raw) return null;
+  try {
+    return JSON.parse(decodeURIComponent(atob(raw)));
+  } catch(e) {
+    return null;
+  }
+}
+
+/* ══════════════════════════════════════
+   ENVELOPE OPEN
+══════════════════════════════════════ */
+let opened = false;
+
+function openEnvelope() {
+  if (opened) return;
+  opened = true;
+  
+  const card = document.getElementById('envCard');
+  card.classList.add('opened');
+  
+  // Confetti burst
+  setTimeout(launchConfetti, 400);
+  
+  // Transition to voucher scene
+  setTimeout(() => {
+    const envScene = document.getElementById('envScene');
+    envScene.classList.add('leaving');
+    setTimeout(() => {
+      envScene.style.display = 'none';
+      showVoucher();
+    }, 800);
+  }, 900);
+}
+
+/* ══════════════════════════════════════
+   SHOW VOUCHER
+══════════════════════════════════════ */
+function esc(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function showVoucher() {
+  const vs = document.getElementById('voucherScene');
+  vs.style.display = 'flex';
+  
+  const p = CFG.PKGS[D.pkg] || CFG.PKGS[1];
+  const bg = ['vbg0','vbg1','vbg2','vbg3','vbg4'][D.tpl] || 'vbg0';
+  const name = D.toName || 'יקרי/י';
+  
+  // Headline
+  document.getElementById('vcHeadline').textContent = `${name}! יש לך הפתעה 🎁`;
+  document.getElementById('vcSub').textContent = `${D.fromName || 'מישהו שאוהב/ת אותך'} שלח/ה לך שובר הקלטה מיוחד`;
+  
+  // Voucher card
+  document.getElementById('voucherWrap').innerHTML = `
+    <div class="voucher ${bg}">
+      <div class="v-bdr"></div>
+      <div class="v-cnr tl"></div><div class="v-cnr tr"></div>
+      <div class="v-cnr bl"></div><div class="v-cnr br"></div>
+      <div class="v-hd">
+        <div class="v-logo">
+          <div class="v-mic-ico">🎙</div>
+          <div class="v-brand">יקיר כהן<small>PRODUCTIONS</small></div>
+        </div>
+        <div class="v-badge">${esc(p.name)}</div>
+      </div>
+      <div class="v-body">
+        <div class="v-tolbl">שובר מתנה עבור</div>
+        <div class="v-name">${esc(name)}</div>
+        <div class="v-pkgname">${esc(p.name)} · ${esc(p.price)}</div>
+        <div class="v-pkgdesc">${esc(p.desc)}</div>
+        ${D.message ? `<div class="v-msg">${esc(D.message).replace(/\n/g,'<br>')}</div>` : ''}
+      </div>
+      <div class="v-ft">
+        <div class="v-meta">
+          ${D.datetime ? `📅 ${esc(D.datetime)}<br>` : ''}
+          ${D.address  ? `📍 ${esc(D.address)}`  : ''}
+        </div>
+        ${D.fromName ? `<div class="v-from"><span class="v-fromlbl">מאת</span><div class="v-fromname">${esc(D.fromName)}</div></div>` : ''}
+      </div>
+    </div>`;
+  
+  // Code
+  if (D.code) {
+    document.getElementById('codeReveal').style.display = 'flex';
+    document.getElementById('crCode').textContent = D.code;
+  }
+  
+  // Info cards
+  const cards = [];
+  if (D.datetime) cards.push({ ico:'📅', lbl:'תאריך ושעה', val:D.datetime });
+  if (D.address)  cards.push({ ico:'📍', lbl:'מיקום האולפן', val:D.address });
+  cards.push({ ico:'💎', lbl:'החבילה שלך', val:`${p.name} · ${p.price}` });
+  
+  document.getElementById('infoCards').innerHTML = cards.map(c =>
+    `<div class="ic">
+      <div class="ic-icon">${c.ico}</div>
+      <div>
+        <div class="ic-label">${c.lbl}</div>
+        <div class="ic-val">${esc(c.val)}</div>
+      </div>
+    </div>`
+  ).join('');
+  
+  // WA button
+  const waMsg = `שלום יקיר! 👋\nקיבלתי שובר הקלטה: ${p.name}\n${D.datetime ? `📅 ${D.datetime}\n` : ''}${D.code ? `🔑 קוד: ${D.code}\n` : ''}\nרוצה לתאם סשן 🎤`;
+  document.getElementById('waBtn').href = `https://wa.me/${CFG.WA_YAKIR}?text=${encodeURIComponent(waMsg)}`;
+  
+  // Second confetti burst
+  setTimeout(launchConfetti, 200);
+}
+
+/* ══════════════════════════════════════
+   CONFETTI
+══════════════════════════════════════ */
+const CHARS = ['🎵','🎶','🎤','🎙','✨','🌟','⭐','💛','🎊','🎉'];
+
+function launchConfetti() {
+  const cv = document.getElementById('confCvs');
+  cv.width = innerWidth; cv.height = innerHeight;
+  const ctx = cv.getContext('2d');
+  const pts = [];
+  for (let i = 0; i < 70; i++) {
+    pts.push({
+      x: Math.random() * cv.width,
+      y: Math.random() * cv.height * 0.3 - 30,
+      vx: (Math.random() - 0.5) * 5,
+      vy: Math.random() * 4 + 1,
+      ch: CHARS[Math.floor(Math.random() * CHARS.length)],
+      sz: 14 + Math.random() * 18,
+      life: 1,
+    });
+  }
+  function draw() {
+    ctx.clearRect(0,0,cv.width,cv.height);
+    let alive = false;
+    pts.forEach(p => {
+      if (p.life <= 0) return;
+      alive = true;
+      p.x += p.vx; p.y += p.vy; p.vy += 0.07; p.vx *= 0.99; p.life -= 0.013;
+      ctx.globalAlpha = Math.max(0, p.life);
+      ctx.font = `${p.sz}px sans-serif`;
+      ctx.fillText(p.ch, p.x, p.y);
+    });
+    ctx.globalAlpha = 1;
+    if (alive) requestAnimationFrame(draw);
+    else ctx.clearRect(0,0,cv.width,cv.height);
+  }
+  draw();
+}
+
+/* ══════════════════════════════════════
+   COPY / SHARE / SAVE
+══════════════════════════════════════ */
+function copyCode() {
+  const code = document.getElementById('crCode').textContent;
+  navigator.clipboard.writeText(code).then(() => toast('🔑 קוד הועתק!')).catch(() => {});
+}
+
+function shareVoucher() {
+  if (navigator.share) {
+    navigator.share({
+      title: `🎁 שובר מתנה | יקיר כהן הפקות`,
+      text: `קיבלתי שובר הקלטה מיוחד! ${CFG.PKGS[D?.pkg||1]?.name}`,
+      url: location.href
+    }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(location.href).then(() => toast('🔗 קישור הועתק!'));
+  }
+}
+
+async function saveImg() {
+  toast('⏳ מייצר תמונה...');
+  await document.fonts.ready;
+
+  const p = CFG.PKGS[D?.pkg||1];
+  const name = D?.toName || 'שמך כאן';
+  const tpl = D?.tpl || 0;
+
+  const TPL_C = [
+    {bg1:'#060412',bg2:'#0e0b28',gold:'#c9a84c',text:'#ede8ff',muted:'rgba(237,232,255,0.5)',border:'rgba(201,168,76,0.28)'},
+    {bg1:'#12062a',bg2:'#2d0d4e',gold:'#d4a8e8',text:'#f0e8ff',muted:'rgba(240,232,255,0.5)',border:'rgba(212,168,232,0.28)'},
+    {bg1:'#071022',bg2:'#0e2040',gold:'#c9a84c',text:'#e8f0ff',muted:'rgba(232,240,255,0.5)',border:'rgba(201,168,76,0.28)'},
+    {bg1:'#1a0c00',bg2:'#3d1f00',gold:'#f0b84c',text:'#fff5e8',muted:'rgba(255,245,232,0.5)',border:'rgba(240,184,76,0.28)'},
+    {bg1:'#f5f0e8',bg2:'#ede4d0',gold:'#6b4800',text:'#1a0c00',muted:'rgba(26,12,0,0.45)',border:'rgba(107,72,0,0.18)'},
+  ];
+  const c = TPL_C[tpl];
+
+  const cv = document.createElement('canvas');
+  cv.width = 1200; cv.height = 800;
+  const ctx = cv.getContext('2d');
+  ctx.direction = 'rtl';
+
+  const bgG = ctx.createLinearGradient(0,0,1200,800);
+  bgG.addColorStop(0,c.bg1); bgG.addColorStop(1,c.bg2);
+  ctx.fillStyle = bgG; ctx.fillRect(0,0,1200,800);
+
+  const gl = ctx.createRadialGradient(200,160,0,200,160,720);
+  gl.addColorStop(0,'rgba(201,168,76,0.07)'); gl.addColorStop(1,'transparent');
+  ctx.fillStyle = gl; ctx.fillRect(0,0,1200,800);
+
+  const pd = 60;
+  ctx.strokeStyle = c.border; ctx.lineWidth = 2;
+  ctx.strokeRect(pd,pd,1200-pd*2,800-pd*2);
+
+  const cs = 44;
+  ctx.strokeStyle = c.gold; ctx.lineWidth = 3;
+  [[pd,pd,1,1],[1200-pd,pd,-1,1],[pd,800-pd,1,-1],[1200-pd,800-pd,-1,-1]].forEach(([x,y,dx,dy])=>{
+    ctx.beginPath(); ctx.moveTo(x,y+dy*cs); ctx.lineTo(x,y); ctx.lineTo(x+dx*cs,y); ctx.stroke();
+  });
+
+  ctx.font = '64px sans-serif';
+  ctx.fillText('🎙', pd+45, pd+90);
+
+  ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+  ctx.fillStyle = c.gold;
+  ctx.font = `700 28px 'Rajdhani','Heebo',sans-serif`;
+  ctx.fillText('יקיר כהן הפקות', 1200-pd-45, pd+65);
+  ctx.fillStyle = c.muted;
+  ctx.font = `20px 'Rajdhani','Heebo',sans-serif`;
+  ctx.fillText('PRODUCTIONS', 1200-pd-45, pd+95);
+
+  ctx.fillStyle = c.muted;
+  ctx.font = `24px 'Heebo',sans-serif`;
+  ctx.textBaseline = 'alphabetic';
+  ctx.fillText('שובר מתנה עבור', 1200-pd-45, 280);
+
+  ctx.fillStyle = c.gold;
+  ctx.font = `900 108px 'Frank Ruhl Libre','Heebo',serif`;
+  ctx.fillText(name, 1200-pd-45, 400);
+
+  ctx.fillStyle = c.text;
+  ctx.font = `700 34px 'Heebo',sans-serif`;
+  ctx.fillText(`${p.name} · ${p.price}`, 1200-pd-45, 455);
+
+  ctx.fillStyle = c.muted;
+  ctx.font = `24px 'Heebo',sans-serif`;
+  ctx.fillText(p.desc, 1200-pd-45, 492);
+
+  if (D?.message) {
+    ctx.strokeStyle = c.border; ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.moveTo(1200-pd-30,525); ctx.lineTo(1200-pd-30,640); ctx.stroke();
+    ctx.fillStyle = c.muted;
+    ctx.font = `italic 24px 'Frank Ruhl Libre','Heebo',serif`;
+    const lines = wrapText(ctx, D.message, 840);
+    lines.slice(0,4).forEach((l,i) => ctx.fillText(l, 1200-pd-55, 540+i*36));
+  }
+
+  ctx.strokeStyle = 'rgba(255,255,255,0.07)'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(pd+40,720); ctx.lineTo(1200-pd-40,720); ctx.stroke();
+
+  ctx.fillStyle = c.muted;
+  ctx.font = `22px 'Heebo',sans-serif`;
+  if (D?.datetime) ctx.fillText(`📅 ${D.datetime}`, 1200-pd-45, 750);
+  if (D?.address)  ctx.fillText(`📍 ${D.address}`,  1200-pd-45, 777);
+
+  if (D?.fromName) {
+    ctx.textAlign = 'left'; ctx.fillStyle = c.gold;
+    ctx.font = `26px 'Frank Ruhl Libre','Heebo',serif`;
+    ctx.fillText(D.fromName, pd+40, 770);
+    ctx.fillStyle = c.muted;
+    ctx.font = `17px 'Rajdhani',sans-serif`;
+    ctx.fillText('מאת', pd+40, 748);
+  }
+
+  const a = document.createElement('a');
+  a.href = cv.toDataURL('image/png');
+  a.download = `voucher-${name.replace(/\s/g,'-')}.png`;
+  a.click();
+  toast('✅ תמונה נשמרה!');
+}
+
+function wrapText(ctx, text, maxW) {
+  const words=text.split(' '); const lines=[]; let line='';
+  words.forEach(w=>{
+    const t=line?`${line} ${w}`:w;
+    if(ctx.measureText(t).width>maxW&&line){lines.push(line);line=w;}else line=t;
+  });
+  if(line)lines.push(line);
+  return lines;
+}
+
+/* ══════════════════════════════════════
+   TOAST
+══════════════════════════════════════ */
+let toastTm;
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.classList.add('show');
+  clearTimeout(toastTm);
+  toastTm = setTimeout(() => el.classList.remove('show'), 2800);
+}
+
+/* ══════════════════════════════════════
+   INIT
+══════════════════════════════════════ */
+window.addEventListener('DOMContentLoaded', () => {
+  initStars();
+  D = parseData();
+  
+  if (!D) {
+    document.getElementById('envScene').style.display = 'none';
+    document.getElementById('errScene').style.display = 'flex';
+    return;
+  }
+  
+  // Update envelope "from" label
+  if (D.fromName) {
+    document.getElementById('envFrom').textContent = `🎁 מ: ${D.fromName}`;
+  }
+  
+  // Auto-open if embedded
+  const params = new URLSearchParams(location.search);
+  if (params.get('embedded') === 'true') {
+    setTimeout(openEnvelope, 500);
+  }
+});
+</script>
+</body>
+</html>

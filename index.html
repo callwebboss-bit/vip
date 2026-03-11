@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#FAFAF8">
+<meta property="og:title" content="יקיר כהן הפקות | Studio Hub">
+<meta property="og:description" content="הקלטות מקצועיות במודיעין. כנס לפורטל האישי שלך.">
+<title>יקיר כהן הפקות | Studio Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Frank+Ruhl+Libre:wght@300;400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFAF8;--white:#FFF;--chalk:#F0EFEC;--ink:#0F0F0F;
+  --ch:#1A1A1A;--gray:#666;--gray2:#999;--gray3:#D0D0D0;
+  --red:#D42B2B;--red2:#B82424;
+  --border:rgba(15,15,15,0.09);--border2:rgba(15,15,15,0.16);
+  --sh-xs:0 1px 8px rgba(0,0,0,0.05);
+  --sh-sm:0 4px 20px rgba(0,0,0,0.07);
+  --sh:0 8px 40px rgba(0,0,0,0.09);
+  --sh-lg:0 16px 64px rgba(0,0,0,0.12);
+  --r:16px;--r2:11px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Heebo',sans-serif;background:var(--bg);color:var(--ch);direction:rtl;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.65;}
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");opacity:0.025;mix-blend-mode:multiply;}
+
+.bg-mark{position:fixed;bottom:-200px;left:-200px;width:860px;height:860px;opacity:0.023;animation:bgRot 110s linear infinite;pointer-events:none;z-index:0;}
+@keyframes bgRot{to{transform:rotate(360deg);}}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.96);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:60px;}
+.hd-logo{display:flex;align-items:center;gap:10px;}
+.hd-icon{width:34px;height:34px;border-radius:8px;background:var(--ch);display:flex;align-items:center;justify-content:center;}
+.hd-brand{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.82rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--ch);line-height:1.2;}
+.hd-brand small{display:block;font-size:0.52rem;color:var(--gray2);letter-spacing:1.5px;font-weight:400;}
+.hd-nav{display:flex;align-items:center;gap:8px;}
+.hd-wa{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:100px;background:#25D366;color:var(--white);font-family:'Heebo',sans-serif;font-weight:700;font-size:0.78rem;text-decoration:none;transition:all 0.22s;}
+.hd-wa:hover{background:#1da850;transform:scale(1.04);}
+@media(max-width:500px){.hd-wa span{display:none;}}
+
+/* HERO */
+.hero{position:relative;z-index:10;padding:72px 32px 60px;max-width:720px;margin:0 auto;text-align:center;}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;padding:5px 16px;border-radius:100px;border:1px solid var(--border2);background:var(--white);font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.64rem;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:24px;box-shadow:var(--sh-xs);}
+.pill-dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.7);}}
+.hero-h{font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:clamp(2.8rem,7.5vw,4.6rem);color:var(--ink);line-height:1.03;margin-bottom:18px;letter-spacing:-0.5px;}
+.hero-h em{color:var(--red);font-style:normal;}
+.hero-sub{font-size:1rem;color:var(--gray);line-height:1.8;max-width:480px;margin:0 auto 34px;}
+.hero-sub strong{color:var(--ch);font-weight:700;}
+.hero-actions{display:flex;align-items:center;justify-content:center;gap:11px;flex-wrap:wrap;}
+.btn-p{padding:15px 30px;border-radius:var(--r);border:none;background:var(--red);color:var(--white);font-family:'Heebo',sans-serif;font-weight:900;font-size:0.98rem;cursor:pointer;text-decoration:none;transition:all 0.22s;box-shadow:0 6px 28px rgba(212,43,43,0.22);display:inline-flex;align-items:center;gap:8px;}
+.btn-p:hover{background:var(--red2);transform:translateY(-2px) scale(1.01);box-shadow:0 10px 36px rgba(212,43,43,0.30);}
+.btn-s{padding:15px 26px;border-radius:var(--r);border:1.5px solid var(--border2);background:var(--white);color:var(--ch);font-family:'Heebo',sans-serif;font-weight:700;font-size:0.95rem;cursor:pointer;text-decoration:none;transition:all 0.22s;display:inline-flex;align-items:center;gap:8px;box-shadow:var(--sh-xs);}
+.btn-s:hover{border-color:var(--ch);transform:translateY(-2px);box-shadow:var(--sh-sm);}
+
+/* CARDS GRID */
+.routes{position:relative;z-index:10;max-width:880px;margin:0 auto;padding:0 32px 72px;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:640px){.routes{grid-template-columns:1fr;padding:0 20px 56px;}}
+
+.rc{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:28px 26px;box-shadow:var(--sh-sm);transition:all 0.28s;display:flex;flex-direction:column;cursor:pointer;text-decoration:none;color:var(--ch);position:relative;overflow:hidden;}
+.rc::after{content:'';position:absolute;top:0;right:0;width:0;height:3px;background:var(--red);transition:width 0.38s cubic-bezier(0.4,0,0.2,1);}
+.rc:hover{box-shadow:var(--sh-lg);transform:translateY(-4px);}
+.rc:hover::after{width:100%;}
+
+.rc.dark{background:var(--ch);color:var(--white);border-color:transparent;box-shadow:var(--sh-lg);}
+.rc.dark:hover{box-shadow:0 22px 72px rgba(0,0,0,0.20);}
+.rc.dark::after{background:var(--red);}
+
+.rc-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;border:1px solid var(--border2);font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.57rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray2);margin-bottom:18px;width:fit-content;transition:all 0.22s;}
+.rc:hover .rc-badge{border-color:rgba(212,43,43,0.3);color:var(--red);}
+.rc.dark .rc-badge{border-color:rgba(255,255,255,0.12);color:rgba(255,255,255,0.38);}
+.rc.dark:hover .rc-badge{border-color:rgba(212,43,43,0.4);color:rgba(212,43,43,0.7);}
+
+.rc-ico{font-size:2.1rem;margin-bottom:14px;display:block;transition:transform 0.28s;}
+.rc:hover .rc-ico{transform:scale(1.06);}
+.rc-title{font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:1.38rem;margin-bottom:9px;line-height:1.2;}
+.rc.dark .rc-title{color:var(--white);}
+.rc-desc{font-size:0.82rem;color:var(--gray);line-height:1.72;flex:1;margin-bottom:20px;}
+.rc.dark .rc-desc{color:rgba(255,255,255,0.50);}
+
+.rc-arrow{display:flex;align-items:center;gap:6px;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:1.2px;text-transform:uppercase;color:var(--gray3);transition:all 0.22s;}
+.rc:hover .rc-arrow{color:var(--red);gap:10px;}
+.rc.dark .rc-arrow{color:rgba(255,255,255,0.2);}
+.rc.dark:hover .rc-arrow{color:rgba(212,43,43,0.7);}
+.ra-ic{transition:transform 0.22s;}
+.rc:hover .ra-ic{transform:translateX(-5px);}
+
+/* PREVIEW PEEK inside card */
+.rc-preview{margin-top:16px;padding-top:16px;border-top:1px solid var(--border);}
+.rc.dark .rc-preview{border-top-color:rgba(255,255,255,0.08);}
+.preview-steps{display:flex;gap:6px;flex-wrap:wrap;}
+.ps-pill{padding:3px 10px;border-radius:100px;background:var(--chalk);font-size:0.68rem;color:var(--gray);font-weight:500;white-space:nowrap;}
+.rc.dark .ps-pill{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.38);}
+
+/* WIDE */
+.rc.wide{grid-column:1/-1;}
+@media(max-width:640px){.rc.wide{grid-column:auto;}}
+.wide-inner{display:flex;align-items:center;gap:20px;}
+@media(max-width:500px){.wide-inner{flex-direction:column;align-items:flex-start;}}
+.rc.wide .rc-ico{margin-bottom:0;flex-shrink:0;font-size:2.4rem;}
+.rc.wide .rc-body{flex:1;}
+.rc.wide .rc-title{font-size:1.18rem;margin-bottom:6px;}
+.rc.wide .rc-desc{margin-bottom:0;}
+
+/* HOW IT WORKS */
+.how{position:relative;z-index:10;max-width:880px;margin:0 auto;padding:0 32px 80px;}
+@media(max-width:640px){.how{padding:0 20px 64px;}}
+.sec-head{text-align:center;margin-bottom:40px;}
+.sec-eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:8px;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.64rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);}
+.sec-eyebrow::before,.sec-eyebrow::after{content:'';width:18px;height:1.5px;background:var(--red);}
+.sec-title{font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:1.9rem;margin-bottom:8px;}
+.sec-sub{font-size:0.87rem;color:var(--gray);}
+.how-track{display:grid;grid-template-columns:repeat(4,1fr);position:relative;}
+@media(max-width:580px){.how-track{grid-template-columns:1fr 1fr;gap:24px 16px;}}
+.how-track::before{content:'';position:absolute;top:21px;right:calc(12.5%);left:calc(12.5%);height:1px;background:var(--border2);z-index:0;}
+@media(max-width:580px){.how-track::before{display:none;}}
+.hs{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 6px;position:relative;z-index:1;}
+.hs-n{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--border2);background:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1rem;color:var(--ch);margin-bottom:14px;box-shadow:var(--sh-xs);transition:all 0.3s;}
+.hs:hover .hs-n{background:var(--ch);color:var(--white);border-color:var(--ch);transform:scale(1.08);}
+.hs-ico{font-size:0.95rem;margin-bottom:5px;}
+.hs-t{font-weight:700;font-size:0.86rem;margin-bottom:4px;}
+.hs-d{font-size:0.71rem;color:var(--gray2);line-height:1.6;}
+
+/* STATS */
+.stats{position:relative;z-index:10;max-width:880px;margin:0 auto;padding:0 32px 80px;}
+@media(max-width:640px){.stats{padding:0 20px 64px;}}
+.stats-inner{background:var(--ch);border-radius:var(--r);padding:36px 40px;display:grid;grid-template-columns:repeat(3,1fr);box-shadow:var(--sh-lg);}
+@media(max-width:580px){.stats-inner{grid-template-columns:1fr;gap:26px;padding:28px 28px;}}
+.stat{text-align:center;position:relative;}
+.stat+.stat::before{content:'';position:absolute;right:0;top:15%;height:70%;width:1px;background:rgba(255,255,255,0.08);}
+@media(max-width:580px){.stat+.stat::before{display:none;}}
+.stat-n{font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:2.8rem;color:var(--white);line-height:1;margin-bottom:7px;}
+.stat-n span{color:var(--red);}
+.stat-l{font-family:'Rajdhani',sans-serif;font-weight:600;font-size:0.67rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);}
+
+/* FOOTER */
+footer{position:relative;z-index:10;border-top:1px solid var(--border);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.ft-left{display:flex;align-items:center;gap:10px;}
+.ft-brand{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--gray2);}
+.ft-sep{width:1px;height:14px;background:var(--border2);}
+.ft-copy{font-size:0.71rem;color:var(--gray3);}
+.ft-wa{display:inline-flex;align-items:center;gap:6px;padding:7px 15px;border-radius:100px;background:#25D366;color:var(--white);font-family:'Heebo',sans-serif;font-weight:700;font-size:0.76rem;text-decoration:none;transition:all 0.22s;}
+.ft-wa:hover{background:#1da850;transform:scale(1.04);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.fu{animation:fadeUp 0.58s ease both;}
+.fu1{animation-delay:.08s;}.fu2{animation-delay:.16s;}.fu3{animation-delay:.24s;}
+.fu4{animation-delay:.32s;}.fu5{animation-delay:.40s;}.fu6{animation-delay:.48s;}
+</style>
+</head>
+<body>
+
+<!-- BG WATERMARK -->
+<div class="bg-mark" aria-hidden="true">
+<svg viewBox="0 0 100 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="31" y="2" width="38" height="74" rx="19" stroke="#1A1A1A" stroke-width="2.5"/>
+<path d="M13 78 Q13 115 50 115 Q87 115 87 78" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+<line x1="50" y1="115" x2="50" y2="140" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="26" y1="140" x2="74" y2="140" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="39" y1="37" x2="61" y2="37" stroke="#1A1A1A" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="39" y1="48" x2="61" y2="48" stroke="#1A1A1A" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="39" y1="59" x2="61" y2="59" stroke="#1A1A1A" stroke-width="1.8" stroke-linecap="round"/>
+</svg>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="hd-logo">
+    <div class="hd-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <rect x="8.5" y="1.5" width="7" height="14" rx="3.5" stroke="white" stroke-width="1.6"/>
+        <path d="M3.5 12c0 4.7 3.8 8.5 8.5 8.5s8.5-3.8 8.5-8.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="12" y1="20.5" x2="12" y2="23" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="9" y1="23" x2="15" y2="23" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="hd-brand">יקיר כהן<small>PRODUCTIONS · STUDIO</small></div>
+  </div>
+  <nav class="hd-nav">
+    <a class="hd-wa" href="https://wa.me/972587555456" target="_blank">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.428a.5.5 0 0 0 .609.61l5.7-1.493A11.938 11.938 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 0 1-5.006-1.374l-.36-.214-3.722.975.992-3.624-.235-.373A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+      <span>שאלה? WhatsApp</span>
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pill fu"><div class="pill-dot"></div>האולפן פתוח · מודיעין</div>
+  <h1 class="hero-h fu fu1">הקלטות שנשמעות<br>כמו <em>מוסיקה אמיתית</em></h1>
+  <p class="hero-sub fu fu2">שיר, פודקאסט, קריינות, ילדים - <strong>הפורטל האישי שלך</strong> כאן. הכל מוכן לפני שמגיעים.</p>
+  <div class="hero-actions fu fu3">
+    <a class="btn-p" href="#routes">🎙 כנס לפורטל שלי</a>
+    <a class="btn-s" href="https://wa.me/972587555456" target="_blank">💬 שאל לפני שמגיע</a>
+  </div>
+</section>
+
+<!-- ROUTE CARDS -->
+<div class="routes" id="routes">
+
+  <!-- CARD 1: לקוח קיים - FEATURED -->
+  <a class="rc dark fu fu1" href="portal.html" id="portalCard">
+    <div class="rc-badge">🔐 יש לך לינק אישי</div>
+    <span class="rc-ico">🎯</span>
+    <h2 class="rc-title">הפורטל האישי שלי</h2>
+    <p class="rc-desc">קיבלת לינק מיקיר? כנס כאן. תשלום, תיאום, צ׳קליסט הכנה, WiFi, ושדרוגים - הכל במקום אחד.</p>
+    <div class="rc-preview">
+      <div class="preview-steps">
+        <span class="ps-pill">💳 תשלום</span>
+        <span class="ps-pill">📅 תיאום</span>
+        <span class="ps-pill">📝 הכנה</span>
+        <span class="ps-pill">🎙 הקלטה</span>
+      </div>
+    </div>
+    <div class="rc-arrow" style="margin-top:18px;">כנס לפורטל שלי <span class="ra-ic">←</span></div>
+  </a>
+
+  <!-- CARD 2: שובר מתנה -->
+  <a class="rc fu fu2" href="view.html" id="voucherCard">
+    <div class="rc-badge">🎁 שובר מתנה</div>
+    <span class="rc-ico">🎁</span>
+    <h2 class="rc-title">קיבלת שובר?<br>פתח אותו כאן</h2>
+    <p class="rc-desc">קיבלת שובר מתנה להקלטה? פתח את הקובץ בקישור שנשלח אליך - תיהנה מחוויית פתיחה מיוחדת.</p>
+    <div class="rc-preview">
+      <div class="preview-steps">
+        <span class="ps-pill">✉️ פתח שובר</span>
+        <span class="ps-pill">📅 תאם סשן</span>
+        <span class="ps-pill">🎙 הקלט</span>
+      </div>
+    </div>
+    <div class="rc-arrow" style="margin-top:18px;">פתח שובר מתנה <span class="ra-ic">←</span></div>
+  </a>
+
+  <!-- CARD 3: רוצה להזמין -->
+  <a class="rc fu fu3" href="https://wa.me/972587555456?text=%D7%94%D7%99%D7%99%20%D7%99%D7%A7%D7%99%D7%A8%21%20%F0%9F%91%8B%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%94%D7%A1%D7%A9%D7%9F%20%D7%94%D7%A7%D7%A8%D7%95%D7%91" target="_blank">
+    <div class="rc-badge">✨ לקוח חדש</div>
+    <span class="rc-ico">🎤</span>
+    <h2 class="rc-title">עוד לא הזמנת?<br>בואו נדבר</h2>
+    <p class="rc-desc">שיר, פודקאסט, קריינות או הקלטת ילדים - שלח הודעה ויקיר יחזור אליך תוך שעות.</p>
+    <div class="rc-preview">
+      <div class="preview-steps">
+        <span class="ps-pill">🎵 שיר</span>
+        <span class="ps-pill">🎙 פודקאסט</span>
+        <span class="ps-pill">🎤 קריינות</span>
+        <span class="ps-pill">🌟 ילדים</span>
+      </div>
+    </div>
+    <div class="rc-arrow" style="margin-top:18px;">שלח הודעה ליקיר <span class="ra-ic">←</span></div>
+  </a>
+
+  <!-- CARD 4: מנהל / יוצר שובר -->
+  <a class="rc fu fu4" href="creator.html">
+    <div class="rc-badge">🔧 יקיר בלבד</div>
+    <span class="rc-ico">⚡</span>
+    <h2 class="rc-title">מנהל האולפן</h2>
+    <p class="rc-desc">יצירת שוברי מתנה, הגדרת חבילות, ועיצוב ופתיחת קישורים ללקוחות. כניסה מורשים בלבד.</p>
+    <div class="rc-preview">
+      <div class="preview-steps">
+        <span class="ps-pill">🎨 עצב שובר</span>
+        <span class="ps-pill">💳 קשר לתשלום</span>
+        <span class="ps-pill">📤 שלח</span>
+      </div>
+    </div>
+    <div class="rc-arrow" style="margin-top:18px;">כניסה לניהול <span class="ra-ic">←</span></div>
+  </a>
+
+  <!-- WIDE CARD: Waze -->
+  <a class="rc wide fu fu5" href="https://waze.com/ul?q=%D7%A2%D7%9E%D7%A7+%D7%90%D7%99%D7%99%D7%9C%D7%95%D7%9F+34+%D7%9E%D7%95%D7%93%D7%99%D7%A2%D7%99%D7%9F&navigate=yes" target="_blank">
+    <div class="wide-inner">
+      <span class="rc-ico">🧭</span>
+      <div class="rc-body">
+        <div class="rc-badge">📍 עמק איילון 34 · מודיעין</div>
+        <h2 class="rc-title">נווט לאולפן</h2>
+        <p class="rc-desc">חניה חופשית צמוד לכניסה. גם Google Maps - <a href="https://maps.app.goo.gl/zRR5mi6Nmi6g3wg57" target="_blank" onclick="event.stopPropagation()" style="color:var(--red);text-decoration:none;font-weight:700;">לחץ כאן</a></p>
+      </div>
+    </div>
+    <div class="rc-arrow" style="margin-top:16px;">פתח ניווט ב-Waze <span class="ra-ic">←</span></div>
+  </a>
+
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="sec-head fu">
+    <div class="sec-eyebrow">איך זה עובד</div>
+    <h2 class="sec-title">מהלינק ועד הלהיט</h2>
+    <p class="sec-sub">4 שלבים. לא יותר. לא פחות.</p>
+  </div>
+  <div class="how-track">
+    <div class="hs fu fu1">
+      <div class="hs-n">1</div>
+      <div class="hs-ico">💳</div>
+      <div class="hs-t">שריין ושלם</div>
+      <div class="hs-d">בחר חבילה, תשלום מאובטח, קבל לינק אישי</div>
+    </div>
+    <div class="hs fu fu2">
+      <div class="hs-n">2</div>
+      <div class="hs-ico">📝</div>
+      <div class="hs-t">הכן את עצמך</div>
+      <div class="hs-d">הפורטל יגיד לך בדיוק מה להכין לפני שמגיעים</div>
+    </div>
+    <div class="hs fu fu3">
+      <div class="hs-n">3</div>
+      <div class="hs-ico">🎙</div>
+      <div class="hs-t">הגע להקליט</div>
+      <div class="hs-d">WiFi, קפה, ציוד מקצועי - הכל מחכה לך</div>
+    </div>
+    <div class="hs fu fu4">
+      <div class="hs-n">4</div>
+      <div class="hs-ico">🎧</div>
+      <div class="hs-t">קבל את הקבצים</div>
+      <div class="hs-d">מיקס, מסטרינג ומסירה - מוכן לפרסום</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="stats">
+  <div class="stats-inner fu">
+    <div class="stat">
+      <div class="stat-n">500<span>+</span></div>
+      <div class="stat-l">הקלטות שיצאו מהאולפן</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">92<span>%</span></div>
+      <div class="stat-l">לקוחות חוזרים לסשן נוסף</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">48<span>h</span></div>
+      <div class="stat-l">זמן מסירה ממוצע ממחרת</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-left">
+    <span class="ft-brand">יקיר כהן הפקות</span>
+    <div class="ft-sep"></div>
+    <span class="ft-copy">עמק איילון 34, מודיעין</span>
+  </div>
+  <a class="ft-wa" href="https://wa.me/972587555456" target="_blank">
+    💬 WhatsApp ישיר
+  </a>
+</footer>
+
+<script>
+const WA = '972587555456';
+
+// אם יש ?c= בURL - הפנה ישירות לפורטל
+(function(){
+  const p = new URLSearchParams(location.search);
+  if(p.get('c') || p.get('type') || p.get('pay')){
+    location.replace('portal.html' + location.search);
+  }
+  // אם יש ?v= (שובר) - הפנה לview
+  if(p.get('d') || p.get('v')){
+    location.replace('view.html' + location.search);
+  }
+})();
+
+// הדגש את הכרטיס הרלוונטי לפי URL referrer
+document.addEventListener('DOMContentLoaded', () => {
+  // Animate cards on scroll
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, {threshold: 0.1});
+
+  document.querySelectorAll('.rc, .hs, .stat').forEach(el => {
+    obs.observe(el);
+  });
+});
+</script>
+</body>
+</html>

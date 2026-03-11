@@ -1,0 +1,11 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/view.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+
+/creator.html
+  X-Frame-Options: DENY
