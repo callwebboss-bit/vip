@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="robots" content="noindex, nofollow">
 <title>יקיר כהן | Studio Voucher Creator 3.0</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Frank+Ruhl+Libre:wght@300;400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -114,6 +115,14 @@ textarea{min-height:82px;resize:vertical;}
 .pc.on{border-color:var(--gold);background:rgba(201,168,76,0.1);}
 .pc-p{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.05rem;color:var(--gold2);display:block;}
 .pc-n{font-size:0.62rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;}
+
+/* ═══ HIDE PRICE TOGGLE ═══ */
+.hp-row{display:flex;align-items:center;gap:10px;margin-top:10px;padding:9px 12px;border-radius:10px;background:var(--surface);border:1.5px solid var(--border2);cursor:pointer;transition:border-color 0.2s;user-select:none;-webkit-user-select:none;}
+.hp-row:hover{border-color:var(--border);}
+.hp-row.on{border-color:rgba(201,168,76,0.45);}
+.hp-row input[type=checkbox]{width:16px;height:16px;accent-color:var(--gold);cursor:pointer;flex-shrink:0;}
+.hp-row span{font-size:0.78rem;color:var(--muted);line-height:1.4;}
+.hp-row.on span{color:var(--text);}
 
 /* ═══ PRESETS ═══ */
 .presets{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;}
@@ -388,6 +397,11 @@ textarea{min-height:82px;resize:vertical;}
       </div>
     </div>
 
+    <label class="hp-row" id="hpRow">
+      <input type="checkbox" id="hidePrice" onchange="S.hidePrice=this.checked;this.closest('.hp-row').classList.toggle('on',S.hidePrice);render()">
+      <span>🙈 הסתר מחיר בשובר</span>
+    </label>
+
     <!-- Details -->
     <div class="sl">👤 פרטים</div>
     <div class="fld">
@@ -510,8 +524,8 @@ const CFG = {
     2: 'https://invoiceguru.co.il/pay/vip',     // ← VIP ₪2,380
   },
   PKGS: {
-    0: { name: 'חבילת בסיס',   price: '₪990',   desc: '2 שעות הקלטה · מיקס · מסטרינג' },
-    1: { name: 'חבילת Silver', price: '₪1,480', desc: '4 שעות הקלטה · מיקס · מסטרינג · וידאו' },
+    0: { name: 'חבילת בסיס',   price: '₪990',   desc: 'עד שעה · שיר 1 · מיקס · מסטרינג' },
+    1: { name: 'חבילת Silver', price: '₪1,480', desc: 'עד שעתיים · שיר 1 · מיקס · מסטרינג · וידאו' },
     2: { name: 'חבילת VIP 👑', price: '₪2,380', desc: 'יום שלם · מיקס · מסטרינג · הפקה מלאה' },
   },
   STUDIO: 'עמק איילון 34, מודיעין',
@@ -523,7 +537,7 @@ const CFG = {
 const S = {
   tpl:0, pkg:1,
   toName:'', fromName:'', datetime:'', address:CFG.STUDIO, message:'',
-  code:'', projectId: makeId()
+  code:'', projectId: makeId(), hidePrice: false
 };
 
 function makeId() {
@@ -672,7 +686,7 @@ function getShareURL() {
   const d = btoa(encodeURIComponent(JSON.stringify({
     tpl:S.tpl, pkg:S.pkg, toName:S.toName, fromName:S.fromName,
     datetime:S.datetime, address:S.address, message:S.message,
-    code:S.code||getCode(), id:S.projectId
+    code:S.code||getCode(), id:S.projectId, hp:S.hidePrice?1:0
   })));
   const base = location.origin + location.pathname.replace(/[^/]*$/, CFG.VIEW_FILE);
   return `${base}?d=${d}`;
