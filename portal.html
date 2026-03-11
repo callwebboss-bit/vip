@@ -1,878 +1,955 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#FAFAF8">
-<meta property="og:title" content="יקיר כהן הפקות | הפורטל האישי שלך">
-<meta property="og:description" content="הדרך שלך לסאונד מושלם מתחילה כאן. כל הפרטים לסשן הקרוב.">
-<meta property="og:image" content="https://lh3.googleusercontent.com/sitesv/APaQ0SR3TphaxeuOUafUMmubM2HAHpwH0_3VeX8GskPnIAeF9bB9-rs5pLdvGKtPqGy6oFlLyiVo1ZRck-cStOg-bnHncbMGy465lsoFK93JqrPZFPKKqryeYHplRubk6fSq5dO339xySxwiwLjV2MQy8px3xCBt3QRY8WJWQnsc8SufKXEWkyWb2R6eKUE=w16383">
-<meta property="og:type" content="website">
-<title>יהסשן שלך | יקיר כהן הפקות</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Frank+Ruhl+Libre:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#FAFAF8;--white:#FFFFFF;--chalk:#F4F3F0;
-  --ch:#1A1A1A;--gray:#666;--gray2:#999;--gray3:#C8C8C8;
-  --red:#D42B2B;--red2:#B82424;--redA:rgba(212,43,43,0.07);
-  --green:#2D6A4F;--greenA:rgba(45,106,79,0.08);
-  --border:rgba(26,26,26,0.09);--border2:rgba(26,26,26,0.15);
-  --sh-xs:0 1px 6px rgba(0,0,0,0.04);
-  --sh-sm:0 3px 18px rgba(0,0,0,0.06);
-  --sh:0 6px 36px rgba(0,0,0,0.08);
-  --sh-lg:0 14px 56px rgba(0,0,0,0.10);
-  --sh-xl:0 24px 80px rgba(0,0,0,0.12);
-  --r:15px;--r2:10px;--r3:7px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html, body{overflow-x:hidden;}
-html{scroll-behavior:smooth;}
-body{
-  font-family:'Heebo',sans-serif;background:var(--bg);color:var(--ch);
-  direction:rtl;min-height:100vh;
-  -webkit-font-smoothing:antialiased;line-height:1.65;
-}
-body::after{
-  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
-  opacity:0.026;mix-blend-mode:multiply;
-}
-.bg-mic{
-  position:fixed;bottom:-160px;left:-160px;width:740px;height:740px;
-  opacity:0.026;animation:bgRot 90s linear infinite;
-  pointer-events:none;z-index:0;transform-origin:center center;
-}
-@keyframes bgRot{to{transform:rotate(360deg);}}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <!-- 🔒 SEO PROTECTION - קריטי! -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex">
+  <meta name="description" content="פורטל VIP אישי - יקיר כהן הפקות">
+  
+  <!-- 📱 PWA Support -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#D42B2B">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <title>הסשן שלך | יקיר כהן הפקות</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ══ CSS VARIABLES - Cloudflare Style ══ */
+    :root {
+      --color-white: #FAFAF8;
+      --color-black: #1A1A1A;
+      --color-red: #D42B2B;
+      --color-red-hover: #B82525;
+      --color-gray: #6B6B6B;
+      --color-light-gray: #E5E5E5;
+      --color-bg-card: #FFFFFF;
+      
+      --font-tech: 'Heebo', sans-serif;
+      --font-luxury: 'Frank Ruhl Libre', serif;
+      
+      --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
+      --shadow-hover: 0 8px 30px rgba(0,0,0,0.12);
+      --glow-red: 0 0 20px rgba(212,43,43,0.25);
+      --glow-red-strong: 0 0 30px rgba(212,43,43,0.4);
+      
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-full: 999px;
+      
+      --transition: all 0.3s ease;
+      --transition-fast: all 0.15s ease;
+      
+      --spacing-xs: 8px;
+      --spacing-sm: 12px;
+      --spacing-md: 20px;
+      --spacing-lg: 32px;
+      --spacing-xl: 48px;
+    }
 
-/* ── TOPBAR ── */
-.topbar{
-  position:fixed;top:0;left:0;right:0;height:58px;z-index:100;
-  background:rgba(250,250,248,0.96);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
-  -webkit-backface-visibility:hidden;
-  border-bottom:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;padding:0 24px;
-}
-.tb-logo{display:flex;align-items:center;gap:10px;}
-.tb-icon{width:34px;height:34px;border-radius:8px;background:var(--ch);display:flex;align-items:center;justify-content:center;}
-.tb-brand{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--ch);line-height:1.2;}
-.tb-brand small{display:block;font-size:0.52rem;color:var(--gray2);letter-spacing:1.5px;font-weight:400;}
-.tb-r{display:flex;align-items:center;gap:8px;}
-.tb-name{font-size:0.83rem;font-weight:700;color:var(--ch);}
-.tb-tag{padding:3px 10px;border-radius:100px;background:var(--ch);color:var(--white);font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.58rem;letter-spacing:1.5px;text-transform:uppercase;}
+    /* ══ BASE RESET ══ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font-tech);
+      background: var(--color-white);
+      color: var(--color-black);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; cursor: pointer; border: none; background: none; }
+    input, textarea { font: inherit; outline: none; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
 
-/* ── WIZARD NAV ── */
-.wizard-nav{
-  position:fixed;top:58px;left:0;right:0;z-index:99;
-  background:rgba(250,250,248,0.96);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
-  -webkit-backface-visibility:hidden;
-  border-bottom:1px solid var(--border);padding:14px 24px;
-}
-.wn-t{
-  display:flex;align-items:center;max-width:360px;margin:0 auto;
-}
-.wn-s{display:flex;flex-direction:column;align-items:center;gap:5px;position:relative;z-index:1;}
-.wn-dot{
-  width:28px;height:28px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  border:2px solid var(--gray3);background:var(--bg);
-  font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.72rem;color:var(--gray3);
-  transition:all 0.4s;
-}
-.wn-s.active .wn-dot{background:var(--red);border-color:var(--red);color:var(--white);box-shadow:0 0 0 4px var(--redA);}
-.wn-s.done .wn-dot{background:var(--green);border-color:var(--green);color:var(--white);}
-.wn-lbl{
-  font-family:'Rajdhani',sans-serif;font-weight:600;font-size:0.58rem;
-  letter-spacing:1px;text-transform:uppercase;color:var(--gray3);
-  white-space:nowrap;transition:color 0.3s;
-}
-.wn-s.active .wn-lbl{color:var(--ch);}
-.wn-s.done .wn-lbl{color:var(--green);}
-.wn-conn{
-  flex:1;height:2px;background:var(--gray3);
-  margin-bottom:22px;transition:background 0.5s;
-}
-.wn-conn.done{background:var(--green);}
+    /* ══ UTILITIES ══ */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .text-center { text-align: center; }
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .items-center { align-items: center; }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+    .gap-sm { gap: var(--spacing-sm); }
+    .gap-md { gap: var(--spacing-md); }
+    .gap-lg { gap: var(--spacing-lg); }
+    .hidden { display: none !important; }
+    .fade-in { animation: fadeIn 0.3s ease forwards; }
+    .slide-up { animation: slideUp 0.3s ease forwards; }
+    
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
 
-/* ── MAIN ── */
-main{position:relative;z-index:10;padding:150px 24px 80px;max-width:680px;margin:0 auto;}
-.wizard-step{display:none;}
-.wizard-step.active{display:block;}
+    /* ══ LAYOUT ══ */
+    .container { max-width: 480px; margin: 0 auto; padding: var(--spacing-md); min-height: 100vh; display: flex; flex-direction: column; }
+    
+    /* ══ TOPBAR ══ */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(250,250,248,0.95); backdrop-filter: blur(10px);
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-bottom: 1px solid var(--color-light-gray);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .topbar-logo { font-family: var(--font-luxury); font-weight: 700; font-size: 1.1rem; color: var(--color-black); }
+    .topbar-logo span { color: var(--color-red); }
+    .topbar-user { display: flex; align-items: center; gap: var(--spacing-xs); font-size: 0.9rem; }
+    .topbar-user-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--color-red); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; }
 
-/* ── DEMO NOTICE ── */
-.demo-notice{
-  display:none;align-items:center;gap:10px;
-  background:rgba(212,43,43,0.06);border:1px solid rgba(212,43,43,0.14);
-  border-radius:var(--r2);padding:10px 16px;margin-bottom:20px;font-size:0.76rem;color:var(--gray);
-}
-.dn-badge{padding:2px 8px;border-radius:100px;background:var(--red);color:var(--white);font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.58rem;letter-spacing:1.5px;text-transform:uppercase;flex-shrink:0;}
-.demo-notice a{color:var(--red);text-decoration:none;font-weight:600;}
+    /* ══ HERO ══ */
+    .hero {
+      text-align: center; padding: var(--spacing-xl) var(--spacing-md);
+      background: linear-gradient(135deg, var(--color-white) 0%, #FFF9F9 100%);
+      border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -50%; right: -50%;
+      width: 200px; height: 200px; background: var(--color-red);
+      border-radius: 50%; filter: blur(60px); opacity: 0.1;
+    }
+    .hero-title { font-family: var(--font-luxury); font-size: 1.8rem; font-weight: 700; margin-bottom: var(--spacing-sm); }
+    .hero-subtitle { color: var(--color-gray); font-size: 1rem; }
 
-/* ── TYPOGRAPHY ── */
-.eyebrow{display:flex;align-items:center;gap:9px;margin-bottom:7px;}
-.ey-line{width:24px;height:1.5px;background:var(--red);flex-shrink:0;}
-.ey-text{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.67rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);}
-.h1{font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:clamp(2.1rem,6vw,3rem);color:var(--ch);line-height:1.06;margin-bottom:11px;}
-.h2{font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:1.7rem;color:var(--ch);line-height:1.15;margin-bottom:8px;}
-.lead{font-size:0.93rem;color:var(--gray);line-height:1.75;max-width:520px;margin-bottom:24px;}
-.lead strong{color:var(--ch);font-weight:700;}
+    /* ══ LOGIN SCREEN ══ */
+    .login-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh; text-align: center; }
+    .login-title { font-family: var(--font-luxury); font-size: 1.5rem; margin-bottom: var(--spacing-lg); }
+    .login-input {
+      width: 100%; max-width: 320px; padding: var(--spacing-md);
+      border: 2px solid var(--color-light-gray); border-radius: var(--radius-md);
+      font-size: 1.1rem; text-align: center; transition: var(--transition);
+    }
+    .login-input:focus { border-color: var(--color-red); box-shadow: var(--glow-red); }
+    .login-btn {
+      margin-top: var(--spacing-md); padding: var(--spacing-md) var(--spacing-xl);
+      background: var(--color-red); color: white; border-radius: var(--radius-full);
+      font-weight: 700; font-size: 1rem; transition: var(--transition);
+    }
+    .login-btn:hover { background: var(--color-red-hover); box-shadow: var(--glow-red-strong); }
+    .login-btn:disabled { background: var(--color-light-gray); cursor: not-allowed; }
 
-/* ── BUTTONS ── */
-.cta-red{
-  display:flex;align-items:center;justify-content:center;gap:9px;
-  width:100%;padding:17px 24px;border-radius:var(--r);border:none;
-  background:var(--red);color:var(--white);
-  font-family:'Heebo',sans-serif;font-weight:900;font-size:1.02rem;
-  cursor:pointer;text-decoration:none;transition:all 0.22s;
-  box-shadow:0 6px 28px rgba(212,43,43,0.22);position:relative;overflow:hidden;
-}
-.cta-red::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,0.07),transparent);pointer-events:none;}
-.cta-red:hover{background:var(--red2);transform:translateY(-2px) scale(1.008);box-shadow:0 10px 36px rgba(212,43,43,0.30);}
-.cta-red:active{transform:translateY(0) scale(1);}
-.cta-red:disabled,.cta-red[disabled]{background:var(--gray3);box-shadow:none;cursor:not-allowed;transform:none !important;}
-.cta-arr{transition:transform 0.2s;}
-.cta-red:not(:disabled):hover .cta-arr{transform:translateX(-3px);}
-.btn-gh{
-  display:inline-flex;align-items:center;justify-content:center;gap:7px;
-  padding:10px 18px;border-radius:var(--r2);
-  border:1px solid var(--border);background:transparent;
-  color:var(--gray);font-family:'Heebo',sans-serif;font-weight:500;font-size:0.84rem;
-  cursor:pointer;text-decoration:none;transition:all 0.22s;
-}
-.btn-gh:hover{border-color:var(--border2);color:var(--ch);transform:scale(1.008);}
+    /* ══ WIZARD NAV ══ */
+    .wizard-nav { display: flex; justify-content: center; gap: var(--spacing-xs); padding: var(--spacing-md) 0; margin-bottom: var(--spacing-lg); }
+    .wizard-step {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--color-light-gray); transition: var(--transition);
+    }
+    .wizard-step.active { background: var(--color-red); transform: scale(1.3); }
+    .wizard-step.done { background: var(--color-red); opacity: 0.6; }
 
-/* ── STUDIO RULES ── */
-.studio-code{
-  background:var(--white);border:1px solid var(--border);
-  border-top:3px solid var(--ch);border-radius:var(--r);
-  padding:22px 24px;box-shadow:var(--sh-sm);margin-bottom:16px;
-}
-.sc-rule{display:flex;gap:13px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--border);}
-.sc-rule:last-child{border-bottom:none;padding-bottom:0;}
-.sc-ico{font-size:0.95rem;flex-shrink:0;margin-top:3px;width:20px;text-align:center;}
-.sc-body{font-size:0.83rem;color:var(--gray);line-height:1.7;}
-.sc-body strong{color:var(--ch);font-weight:700;}
-.sc-body .warn{color:var(--red);font-weight:700;}
+    /* ══ STEP CONTAINER ══ */
+    .step { display: none; animation: slideUp 0.3s ease; }
+    .step.active { display: block; }
 
-/* ── AGREEMENT ── */
-.agree-row{
-  display:flex;align-items:flex-start;gap:12px;
-  padding:14px 16px;border-radius:var(--r2);
-  border:1.5px solid var(--border2);background:var(--chalk);
-  cursor:pointer;transition:all 0.22s;margin-bottom:16px;
-}
-.agree-row:hover{border-color:var(--ch);background:var(--white);}
-.agree-row.on{border-color:var(--green);background:#F7FAF8;}
-.agree-box{
-  width:22px;height:22px;border-radius:6px;flex-shrink:0;margin-top:1px;
-  border:1.5px solid var(--gray3);background:transparent;
-  display:flex;align-items:center;justify-content:center;transition:all 0.22s;
-}
-.agree-row.on .agree-box{background:var(--green);border-color:var(--green);}
-.a-tick{display:none;color:var(--white);font-size:0.8rem;font-weight:900;}
-.agree-row.on .a-tick{display:block;}
-.agree-lbl{font-size:0.84rem;color:var(--ch);line-height:1.6;font-weight:500;}
+    /* ══ RULES CARD ══ */
+    .rules-card {
+      background: var(--color-bg-card); border-radius: var(--radius-md);
+      padding: var(--spacing-lg); box-shadow: var(--shadow-soft);
+      margin-bottom: var(--spacing-md);
+    }
+    .rules-title { font-family: var(--font-luxury); font-size: 1.3rem; margin-bottom: var(--spacing-md); text-align: center; }
+    .rules-list { display: flex; flex-direction: column; gap: var(--spacing-sm); }
+    .rule-item { display: flex; gap: var(--spacing-sm); align-items: flex-start; }
+    .rule-icon { color: var(--color-red); font-size: 1.2rem; flex-shrink: 0; }
+    .rule-text { font-size: 0.95rem; color: var(--color-black); }
+    .agree-row {
+      display: flex; align-items: center; gap: var(--spacing-sm);
+      padding: var(--spacing-md); background: #FFF9F9;
+      border-radius: var(--radius-md); margin: var(--spacing-md) 0;
+      border: 2px solid transparent; transition: var(--transition);
+    }
+    .agree-row.on { border-color: var(--color-red); }
+    .agree-checkbox { width: 20px; height: 20px; accent-color: var(--color-red); }
+    .agree-label { font-size: 0.95rem; }
 
-/* ── UPSELLS ── */
-.upsell{
-  background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);
-  padding:20px 22px;margin-bottom:10px;display:flex;gap:16px;
-  box-shadow:var(--sh-sm);transition:all 0.25s;
-}
-.upsell:hover{box-shadow:var(--sh-lg);transform:translateY(-2px);}
-.upsell.featured{border-color:var(--ch);border-width:2px;}
-.upsell.selected{border-color:var(--green) !important;background:#F7FAF8;}
-.u-ico{
-  width:46px;height:46px;border-radius:12px;flex-shrink:0;
-  background:var(--chalk);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;font-size:1.3rem;
-}
-.upsell.featured .u-ico{background:var(--ch);}
-.u-body{flex:1;}
-.u-name{font-weight:700;font-size:0.95rem;margin-bottom:3px;line-height:1.3;}
-.u-feat-badge{
-  display:inline-block;margin-bottom:5px;
-  padding:2px 8px;border-radius:100px;
-  background:var(--ch);color:var(--white);
-  font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.54rem;
-  letter-spacing:1px;text-transform:uppercase;
-}
-.u-desc{font-size:0.77rem;color:var(--gray);line-height:1.6;margin-bottom:10px;}
-.u-foot{display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
-.u-price{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.2rem;color:var(--ch);}
-.u-old{font-family:'Rajdhani',sans-serif;font-size:0.8rem;color:var(--gray3);text-decoration:line-through;}
-.u-save{
-  padding:2px 8px;border-radius:100px;
-  background:var(--greenA);color:var(--green);border:1px solid rgba(45,106,79,0.2);
-  font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.56rem;
-  letter-spacing:0.8px;text-transform:uppercase;
-}
-.u-add{
-  padding:8px 16px;border-radius:8px;border:1.5px solid var(--border2);
-  background:transparent;color:var(--ch);
-  font-family:'Heebo',sans-serif;font-weight:700;font-size:0.8rem;
-  cursor:pointer;transition:all 0.2s;margin-right:auto;white-space:nowrap;
-}
-.u-add:hover{background:var(--ch);color:var(--white);border-color:var(--ch);}
-.upsell.selected .u-add{background:var(--green);color:var(--white);border-color:var(--green);}
-.upsell.selected .u-add:hover{background:#255c43;border-color:#255c43;}
+    /* ══ UPSELL CARDS ══ */
+    .upsell-grid { display: grid; gap: var(--spacing-md); }
+    .upsell-card {
+      background: var(--color-bg-card); border-radius: var(--radius-md);
+      padding: var(--spacing-md); border: 2px solid var(--color-light-gray);
+      transition: var(--transition); position: relative;
+    }
+    .upsell-card:hover { border-color: var(--color-red); box-shadow: var(--shadow-hover); }
+    .upsell-card.selected { border-color: var(--color-red); background: #FFF9F9; }
+    .upsell-badge {
+      position: absolute; top: -8px; left: 50%; transform: translateX(-50%);
+      background: var(--color-red); color: white; padding: 2px 12px;
+      border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700;
+    }
+    .upsell-icon { font-size: 1.5rem; margin-bottom: var(--spacing-xs); }
+    .upsell-name { font-weight: 700; margin-bottom: var(--spacing-xs); }
+    .upsell-desc { font-size: 0.9rem; color: var(--color-gray); margin-bottom: var(--spacing-sm); }
+    .upsell-price { display: flex; align-items: center; gap: var(--spacing-xs); }
+    .upsell-price-main { font-weight: 700; color: var(--color-red); font-size: 1.1rem; }
+    .upsell-price-old { text-decoration: line-through; color: var(--color-gray); font-size: 0.9rem; }
+    .upsell-save { background: #E8F5E9; color: #2E7D32; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+    .upsell-btn {
+      width: 100%; margin-top: var(--spacing-sm); padding: var(--spacing-sm);
+      border: 2px solid var(--color-light-gray); border-radius: var(--radius-md);
+      font-weight: 500; transition: var(--transition-fast);
+    }
+    .upsell-card.selected .upsell-btn {
+      background: var(--color-red); color: white; border-color: var(--color-red);
+    }
 
-/* ── CART SUMMARY ── */
-.cart-summary{
-  background:var(--white);border:1.5px solid var(--border2);
-  border-radius:var(--r);padding:20px 22px;
-  box-shadow:var(--sh-sm);margin-bottom:16px;
-}
-.cs-hd{
-  font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.6rem;
-  letter-spacing:2px;text-transform:uppercase;color:var(--gray2);margin-bottom:12px;
-}
-.cs-row{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:7px 0;border-bottom:1px solid var(--border);
-  font-size:0.84rem;color:var(--gray);
-}
-.cs-row.base{color:var(--ch);font-weight:600;}
-.cs-row:last-of-type{border-bottom:none;}
-.cs-row.total{
-  font-weight:900;font-size:1rem;color:var(--ch);
-  padding-top:12px;border-top:2px solid var(--ch);margin-top:4px;border-bottom:none;
-}
-.cs-row.total span:last-child{font-family:'Rajdhani',sans-serif;font-size:1.35rem;}
-.cs-zero{font-size:0.78rem;color:var(--gray2);text-align:center;padding:8px 0;}
+    /* ══ CART SUMMARY ══ */
+    .cart-summary {
+      background: var(--color-bg-card); border-radius: var(--radius-md);
+      padding: var(--spacing-md); box-shadow: var(--shadow-soft);
+      margin: var(--spacing-lg) 0;
+    }
+    .cart-row { display: flex; justify-content: space-between; padding: var(--spacing-xs) 0; }
+    .cart-row.total { border-top: 2px solid var(--color-light-gray); margin-top: var(--spacing-sm); padding-top: var(--spacing-sm); font-weight: 700; font-size: 1.1rem; }
+    .cart-items { font-size: 0.9rem; color: var(--color-gray); }
 
-/* ── SKIP LINK ── */
-.skip-link{
-  display:block;text-align:center;margin-top:12px;
-  font-size:0.77rem;color:var(--gray2);text-decoration:underline;
-  cursor:pointer;transition:color 0.2s;
-}
-.skip-link:hover{color:var(--ch);}
+    /* ══ ACTION BUTTONS ══ */
+    .btn-primary {
+      width: 100%; padding: var(--spacing-md); background: var(--color-red);
+      color: white; border-radius: var(--radius-full); font-weight: 700;
+      font-size: 1rem; transition: var(--transition); margin-top: var(--spacing-md);
+    }
+    .btn-primary:hover { background: var(--color-red-hover); box-shadow: var(--glow-red-strong); }
+    .btn-primary:disabled { background: var(--color-light-gray); cursor: not-allowed; }
+    
+    .btn-secondary {
+      width: 100%; padding: var(--spacing-md); background: transparent;
+      color: var(--color-gray); border: 2px solid var(--color-light-gray);
+      border-radius: var(--radius-full); font-weight: 500; margin-top: var(--spacing-sm);
+      transition: var(--transition-fast);
+    }
+    .btn-secondary:hover { border-color: var(--color-black); color: var(--color-black); }
 
-/* ── SUCCESS SCREEN (step 3) ── */
-.success-wrap{text-align:center;padding:20px 0;}
-.success-icon{
-  width:86px;height:86px;border-radius:50%;
-  background:var(--greenA);border:2px solid rgba(45,106,79,0.2);
-  display:flex;align-items:center;justify-content:center;
-  font-size:2.2rem;margin:0 auto 22px;
-}
-.success-title{
-  font-family:'Frank Ruhl Libre',serif;font-weight:900;
-  font-size:clamp(2rem,6vw,2.8rem);margin-bottom:10px;line-height:1.1;
-}
-.success-sub{
-  font-size:0.95rem;color:var(--gray);line-height:1.8;
-  margin-bottom:32px;max-width:440px;margin-left:auto;margin-right:auto;
-}
+    /* ══ DASHBOARD ══ */
+    .dashboard-card {
+      background: var(--color-bg-card); border-radius: var(--radius-md);
+      padding: var(--spacing-md); box-shadow: var(--shadow-soft);
+      margin-bottom: var(--spacing-md);
+    }
+    .dashboard-title { font-family: var(--font-luxury); font-size: 1.2rem; margin-bottom: var(--spacing-sm); }
+    .package-badge {
+      display: inline-block; padding: 4px 12px; background: var(--color-red);
+      color: white; border-radius: var(--radius-full); font-size: 0.85rem;
+      font-weight: 700; margin-bottom: var(--spacing-sm);
+    }
+    .includes-list { display: flex; flex-direction: column; gap: var(--spacing-xs); }
+    .include-item { display: flex; align-items: center; gap: var(--spacing-xs); font-size: 0.95rem; }
+    .include-item::before { content: '✓'; color: var(--color-red); font-weight: 700; }
 
-/* ── KOALENDAR BUTTON ── */
-.cal-btn{
-  display:flex;align-items:center;justify-content:center;gap:11px;
-  width:100%;padding:20px 24px;border-radius:var(--r);
-  background:var(--ch);color:var(--white);
-  font-family:'Heebo',sans-serif;font-weight:900;font-size:1.1rem;
-  text-decoration:none;transition:all 0.25s;
-  box-shadow:var(--sh-lg);margin-bottom:10px;
-}
-.cal-btn:hover{transform:translateY(-3px) scale(1.01);box-shadow:var(--sh-xl);}
-.cal-hint{text-align:center;font-size:0.72rem;color:var(--gray2);margin-bottom:28px;}
-.wa-sec{
-  display:flex;align-items:center;justify-content:center;gap:9px;
-  padding:14px 20px;border-radius:var(--r2);
-  border:1.5px solid var(--border2);background:var(--white);
-  color:var(--ch);font-family:'Heebo',sans-serif;font-weight:700;font-size:0.9rem;
-  text-decoration:none;transition:all 0.22s;box-shadow:var(--sh-xs);
-}
-.wa-sec:hover{border-color:var(--ch);transform:scale(1.01);box-shadow:var(--sh-sm);}
+    /* ══ WIFI REVEAL ══ */
+    .wifi-card { text-align: center; }
+    .wifi-ssid { font-size: 1.3rem; font-weight: 700; margin-bottom: var(--spacing-sm); }
+    .wifi-pass {
+      font-family: monospace; font-size: 1.1rem; letter-spacing: 2px;
+      padding: var(--spacing-sm); background: #F5F5F5; border-radius: var(--radius-sm);
+      margin: var(--spacing-sm) 0; min-height: 24px;
+    }
+    .wifi-pass.hidden { color: transparent; text-shadow: 0 0 8px rgba(0,0,0,0.3); }
+    .wifi-btn {
+      padding: var(--spacing-sm) var(--spacing-lg); background: var(--color-black);
+      color: white; border-radius: var(--radius-full); font-weight: 500;
+      transition: var(--transition-fast);
+    }
+    .wifi-btn.ok { background: #2E7D32; }
 
-/* ── WIFI BOX ── */
-.wifi-box{
-  background:var(--white);border:1px solid var(--border);
-  border-radius:var(--r2);padding:16px 20px;
-  display:flex;align-items:center;gap:14px;
-  box-shadow:var(--sh-xs);margin-top:28px;
-}
-.wifi-ico{font-size:1.4rem;flex-shrink:0;}
-.wifi-info{flex:1;}
-.wifi-lbl{font-family:'Rajdhani',sans-serif;font-size:0.55rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray2);margin-bottom:2px;}
-.wifi-val{font-weight:700;font-size:0.87rem;color:var(--ch);}
-.wifi-pass-row{display:flex;align-items:center;gap:8px;margin-top:6px;}
-.wifi-pass-val{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.87rem;color:var(--ch);word-break:break-all;}
-.wifi-copy-btn{
-  padding:4px 9px;border-radius:6px;border:1px solid var(--border2);
-  background:transparent;color:var(--gray);font-family:'Heebo',sans-serif;
-  font-size:0.64rem;cursor:pointer;transition:all 0.18s;flex-shrink:0;white-space:nowrap;
-}
-.wifi-copy-btn:hover{border-color:var(--ch);color:var(--ch);}
-.wifi-copy-btn.ok{border-color:var(--green);color:var(--green);}
+    /* ══ GAL ASSISTANT ══ */
+    .gal-btn {
+      position: fixed; bottom: var(--spacing-lg); left: var(--spacing-md);
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--color-red); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; box-shadow: var(--glow-red);
+      transition: var(--transition); z-index: 100;
+    }
+    .gal-btn:hover { transform: scale(1.1); box-shadow: var(--glow-red-strong); }
+    
+    .gal-panel {
+      position: fixed; bottom: 80px; left: var(--spacing-md); right: var(--spacing-md);
+      background: var(--color-bg-card); border-radius: var(--radius-lg);
+      padding: var(--spacing-md); box-shadow: var(--shadow-hover);
+      z-index: 99; display: none; animation: slideUp 0.3s ease;
+    }
+    .gal-panel.active { display: block; }
+    .gal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-md); }
+    .gal-title { font-weight: 700; }
+    .gal-close { font-size: 1.5rem; color: var(--color-gray); }
+    .gal-faq { display: flex; flex-direction: column; gap: var(--spacing-sm); }
+    .gal-question { font-weight: 500; cursor: pointer; padding: var(--spacing-xs) 0; }
+    .gal-answer { display: none; font-size: 0.9rem; color: var(--color-gray); padding: var(--spacing-xs) 0 var(--spacing-sm); }
+    .gal-question.active + .gal-answer { display: block; }
 
-/* ── ERROR SCREEN ── */
-#errScreen{display:none;position:relative;z-index:10;min-height:calc(100vh - 58px);padding:60px 24px;flex-direction:column;align-items:center;justify-content:center;text-align:center;max-width:480px;margin:0 auto;}
-#errScreen.show{display:flex;}
+    /* ══ VIRAL SHARE ══ */
+    .viral-card { text-align: center; }
+    .viral-input {
+      width: 100%; padding: var(--spacing-md); border: 2px solid var(--color-light-gray);
+      border-radius: var(--radius-md); font-size: 1rem; margin: var(--spacing-sm) 0;
+      text-align: center; transition: var(--transition);
+    }
+    .viral-input:focus { border-color: var(--color-red); }
 
-/* ── TOAST ── */
-.toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--ch);border-radius:100px;padding:10px 22px;font-size:0.83rem;font-weight:600;color:var(--white);z-index:999;transition:all 0.28s;opacity:0;pointer-events:none;white-space:nowrap;}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+    /* ══ TOAST ══ */
+    .toast {
+      position: fixed; bottom: var(--spacing-lg); left: 50%; transform: translateX(-50%) translateY(100px);
+      background: var(--color-black); color: white; padding: var(--spacing-sm) var(--spacing-lg);
+      border-radius: var(--radius-full); font-size: 0.9rem; z-index: 200;
+      transition: transform 0.3s ease; box-shadow: var(--shadow-hover);
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
 
-/* ── ANIMATIONS ── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
-@keyframes shake{0%,100%{transform:translateX(0);}20%,60%{transform:translateX(-4px);}40%,80%{transform:translateX(4px);}}
+    /* ══ ERROR SCREEN ══ */
+    .error-screen {
+      position: fixed; inset: 0; background: var(--color-white);
+      display: none; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: var(--spacing-lg); z-index: 300;
+    }
+    .error-screen.show { display: flex; }
+    .error-icon { font-size: 3rem; margin-bottom: var(--spacing-md); }
+    .error-title { font-family: var(--font-luxury); font-size: 1.4rem; margin-bottom: var(--spacing-sm); }
+    .error-msg { color: var(--color-gray); margin-bottom: var(--spacing-lg); }
+    .error-btn {
+      padding: var(--spacing-md) var(--spacing-xl); background: var(--color-red);
+      color: white; border-radius: var(--radius-full); font-weight: 700;
+    }
 
-/* הוספתי את תזמון התנועה היוקרתי של אפל */
-.fu{animation:fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;}
-.fu1{animation-delay:.07s;}.fu2{animation-delay:.14s;}.fu3{animation-delay:.21s;}
-.fu4{animation-delay:.28s;}.fu5{animation-delay:.35s;}.fu6{animation-delay:.42s;}
+    /* ══ DEMO NOTICE ══ */
+    .demo-notice {
+      background: #FFF3E0; border: 1px solid #FFB74D; border-radius: var(--radius-md);
+      padding: var(--spacing-md); margin-bottom: var(--spacing-md); font-size: 0.9rem;
+      display: none;
+    }
+    .demo-notice.show { display: block; }
 
-@media(max-width:480px){
-  main{padding-top:150px;}
-  .upsell{flex-direction:column;gap:12px;}
-  .u-ico{width:38px;height:38px;}
-}
-@media print{.topbar,.wizard-nav,.toast,.bg-mic{display:none!important;}main{padding-top:20px;}}
-</style>
+    /* ══ VOICE RECORD ══ */
+    .voice-record {
+      text-align: center; padding: var(--spacing-lg);
+      background: #F5F5F5; border-radius: var(--radius-md); margin: var(--spacing-md) 0;
+    }
+    .voice-btn {
+      width: 70px; height: 70px; border-radius: 50%;
+      background: var(--color-red); color: white; font-size: 1.5rem;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto var(--spacing-sm); transition: var(--transition);
+    }
+    .voice-btn.recording { animation: pulse 1s infinite; background: #B71C1C; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(212,43,43,0.7); } 70% { box-shadow: 0 0 0 15px rgba(212,43,43,0); } 100% { box-shadow: 0 0 0 0 rgba(212,43,43,0); } }
+    .voice-status { font-size: 0.9rem; color: var(--color-gray); }
+
+    /* ══ IMAGE UPLOAD ══ */
+    .image-upload { text-align: center; margin: var(--spacing-md) 0; }
+    .image-preview {
+      width: 120px; height: 120px; border-radius: 50%;
+      background: var(--color-light-gray); margin: 0 auto var(--spacing-sm);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; border: 3px solid var(--color-red);
+    }
+    .image-preview img { width: 100%; height: 100%; object-fit: cover; }
+    .image-input { display: none; }
+    .image-label {
+      display: inline-block; padding: var(--spacing-sm) var(--spacing-lg);
+      background: var(--color-black); color: white; border-radius: var(--radius-full);
+      font-size: 0.9rem; cursor: pointer; transition: var(--transition-fast);
+    }
+    .image-label:hover { background: var(--color-red); }
+
+    /* ══ RESPONSIVE ══ */
+    @media (min-width: 481px) {
+      .container { max-width: 520px; padding: var(--spacing-lg); }
+      .hero-title { font-size: 2rem; }
+    }
+  </style>
 </head>
 <body>
-
-<div class="bg-mic" aria-hidden="true">
-<svg viewBox="0 0 100 145" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="31" y="2" width="38" height="74" rx="19" stroke="#1A1A1A" stroke-width="2.5"/>
-<path d="M13 78 Q13 115 50 115 Q87 115 87 78" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-<line x1="50" y1="115" x2="50" y2="140" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
-<line x1="26" y1="140" x2="74" y2="140" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
-<line x1="39" y1="37" x2="61" y2="37" stroke="#1A1A1A" stroke-width="1.8" stroke-linecap="round"/>
-<line x1="39" y1="48" x2="61" y2="48" stroke="#1A1A1A" stroke-width="1.8" stroke-linecap="round"/>
-<line x1="39" y1="59" x2="61" y2="59" stroke="#1A1A1A" stroke-width="1.8" stroke-linecap="round"/>
-</svg>
-</div>
-
-<div id="errScreen">
-<div style="font-size:2.5rem;margin-bottom:16px;">🎙</div>
-<h1 style="font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:1.7rem;margin-bottom:8px;">אופס, משהו במיקס התערבב</h1>
-<p style="font-size:0.87rem;color:var(--gray);line-height:1.7;margin-bottom:24px;">הלינק הזה כבר לא בתוקף או שלא הועתק במלואו.<br>אל דאגה, הודעה קטנה ליקיר ותקבלו לינק חדש.</p>
-<a id="errWa" href="#" class="cta-red" style="max-width:280px;margin:0 auto;">💬 WhatsApp ליקיר <span class="cta-arr">←</span></a>
-</div>
-
-<header class="topbar">
-<div class="tb-logo">
-<div class="tb-icon">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="8.5" y="1.5" width="7" height="14" rx="3.5" stroke="white" stroke-width="1.6"/><path d="M3.5 12c0 4.7 3.8 8.5 8.5 8.5s8.5-3.8 8.5-8.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="20.5" x2="12" y2="23" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="9" y1="23" x2="15" y2="23" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg>
-</div>
-<div class="tb-brand">יקיר כהן<small>PRODUCTIONS · STUDIO</small></div>
-</div>
-<div class="tb-r">
-<span class="tb-name" id="tbName">-</span>
-<span class="tb-tag" id="tbTag">STUDIO</span>
-</div>
-</header>
-
-<!-- WIZARD PROGRESS NAV -->
-<nav class="wizard-nav" aria-label="שלבי ה-Onboarding">
-<div class="wn-t">
-  <div class="wn-s active" id="ws0">
-    <div class="wn-dot">1</div>
-    <div class="wn-lbl">חוקי האולפן</div>
-  </div>
-  <div class="wn-conn" id="wc01"></div>
-  <div class="wn-s" id="ws1">
-    <div class="wn-dot">2</div>
-    <div class="wn-lbl">שדרוגים</div>
-  </div>
-  <div class="wn-conn" id="wc12"></div>
-  <div class="wn-s" id="ws2">
-    <div class="wn-dot">3</div>
-    <div class="wn-lbl">תיאום</div>
-  </div>
-</div>
-</nav>
-
-<main id="portalMain">
-
-<!-- DEMO NOTICE -->
-<div class="demo-notice" id="demoNotice">
-  <span class="dn-badge">DEMO</span>
-  מצב הדגמה - הוסף פרמטרים ל-URL לשליחה ללקוח.
-  <a href="#" onclick="showURLGuide();return false">הסבר ←</a>
-</div>
-
-<!-- ══════════════════════════════════════════
-     STEP 1: READ & APPROVE
-══════════════════════════════════════════ -->
-<section class="wizard-step active" id="step-1">
-
-  <div class="fu">
-    <div class="eyebrow">
-      <div class="ey-line"></div>
-      <div class="ey-text" id="svcLabel">הכנה לסשן</div>
-    </div>
-    <h1 class="h1" id="heroName">ברוך הבא</h1>
-    <p class="lead">כדי להבטיח תוצאה ברמה הגבוהה ביותר, <strong>חשוב שנתואם ציפיות</strong> לפני שיוצאים לדרך. קריאה קצרה – וממשיכים.</p>
+  <!-- ══ ERROR SCREEN ══ -->
+  <div id="errScreen" class="error-screen">
+    <div class="error-icon">⚠️</div>
+    <h1 class="error-title">אופס, משהו במיקס התערבב</h1>
+    <p class="error-msg">הלינק הזה כבר לא בתוקף או שלא הועתק במלואו.<br>אל דאגה, הודעה קטנה ליקיר ותקבלו לינק חדש.</p>
+    <a id="errWa" href="#" class="error-btn">💬 WhatsApp ליקיר</a>
   </div>
 
-  <div class="studio-code fu fu1">
-    <div class="sc-rule">
-      <div class="sc-ico">🎵</div>
-      <div class="sc-body">
-        <strong>תרגול מוקדם:</strong> קול מוכן הוא קול מנצח. הגעה עם חומר מתורגל תאפשר לנו להתמקד בביצוע וברגש במקום בתיקון טעויות.
-      </div>
-    </div>
-
-    <div class="sc-rule">
-      <div class="sc-ico">💧</div>
-      <div class="sc-body">
-        <strong>הידרציה:</strong> מיתרי הקול זקוקים ללחות. מומלץ לשתות מים כשעה לפני ההקלטה. קפה – במידה, אלכוהול – <span class="warn">לא מומלץ</span> ביום הסשן.
-      </div>
-    </div>
-
-    <div class="sc-rule">
-      <div class="sc-ico">😴</div>
-      <div class="sc-body">
-        <strong>מנוחה:</strong> מיתרי הקול הם שריר. שנת לילה טובה היא ה"דלק" הכרחי לסשן מוצלח ועוצמתי.
-      </div>
-    </div>
-
-    <div class="sc-rule">
-      <div class="sc-ico">👥</div>
-      <div class="sc-body">
-        <strong>מרחב יצירה:</strong> אנחנו שואפים לריכוז מקסימלי. ניתן להביא עד 2 מלווים, בתנאי שהם מהווים קהל תומך ושקט בתוך חלל ההקלטה.
-      </div>
-    </div>
-
-    <div class="sc-rule">
-      <div class="sc-ico">🚫</div>
-      <div class="sc-body">
-        <strong>תזונה באולפן:</strong> אין להכניס מזון לחדר ההקלטה. שתייה (מים) בלבד. הפסקות אוכל יתקיימו בחלל האירוח.
-      </div>
-    </div>
-
-    <div class="sc-rule">
-      <div class="sc-ico">📱</div>
-      <div class="sc-body">
-        <strong>מצב טיסה:</strong> כדי למנוע רעשים אלקטרומגנטיים והסחות דעת, יש להעביר טלפונים למצב שקט מוחלט (ללא רטט).
-      </div>
-    </div>
-
-    <div class="sc-rule">
-      <div class="sc-ico">⏰</div>
-      <div class="sc-body">
-        <strong>מדיניות ביטולים:</strong> ביטול/דחייה יתבצעו <strong>לפחות 24 שעות מראש</strong>. אי הגעה או ביטול מאוחר יגררו חיוב של <span class="warn">50% מעלות החבילה</span>.
-      </div>
-    </div>
-
-    <div class="sc-rule">
-      <div class="sc-ico">🎛️</div>
-      <div class="sc-body">
-        <strong>אותנטיות וטכנולוגיה:</strong> אנחנו משתמשים בטכנולוגיה המתקדמת ביותר לתיקון קול, אך זכרו: ככל שהביצוע המקורי טוב יותר, התוצאה הסופית תישמע טבעית ומרשימה יותר.
-      </div>
-    </div>
-  </div>
-
-  <div class="agree-row fu fu2" id="agreeRow" onclick="toggleAgree()">
-    <div class="agree-box" id="agreeCb"><span class="a-tick">✓</span></div>
-    <div class="agree-lbl">קראתי, הבנתי ואני מסכים לחוקי האולפן</div>
-  </div>
-
-  <div class="fu fu3">
-    <button class="cta-red" id="step1Btn" onclick="goStep(2)" disabled>
-      <span id="step1BtnTxt">אני מוכן, בואו נתחיל 🎵</span>
-      <span class="cta-arr">←</span>
-    </button>
-    <p style="text-align:center;font-size:0.7rem;color:var(--gray2);margin-top:12px;opacity:0.8;">יש לאשר את התקנון כדי להמשיך</p>
-  </div>
-
-</section>
-
-<!-- ══════════════════════════════════════════
-     STEP 2: SMART UPSELLS
-══════════════════════════════════════════ -->
-<section class="wizard-step" id="step-2">
-
-  <div class="fu">
-    <div class="eyebrow">
-      <div class="ey-line"></div>
-      <div class="ey-text">שדרוגים ייחודיים</div>
-    </div>
-    <h2 class="h2" id="upsellTitle">בואו ניקח את זה לקצה</h2>
-    <p class="lead" id="upsellLead">
-      הקלטה טובה היא רק הבסיס. הנה כמה דרכים להפוך את הסשן שלכם ל<strong>מוצר מוגמר, מקצועי ובלתי נשכח</strong>. 
-      בחר את השדרוגים שמתאימים לך – אנחנו כבר נדאג לכל השאר.
-    </p>
-  </div>
-
-  <div id="upsellCards" class="fu fu1"></div>
-
-  <div class="cart-summary fu fu2" id="cartSummary">
-    <div class="cs-hd">סיכום הזמנה משוער</div>
+  <!-- ══ MAIN APP ══ -->
+  <div id="portalMain" class="container">
     
-    <div class="cs-row base">
-      <div class="cs-info">
-        <span class="cs-label">חבילה בסיסית</span>
-        <span class="cs-pkg-name" id="csBasePkg">Silver</span>
+    <!-- Topbar -->
+    <header class="topbar">
+      <div class="topbar-logo">יקיר כהן <span>הפקות</span></div>
+      <div class="topbar-user">
+        <div id="tbAvatar" class="topbar-user-avatar">י</div>
+        <span id="tbName">[שם]</span>
       </div>
-      <span class="cs-price" id="csBase">₪1,480</span>
+    </header>
+
+    <!-- Demo Notice -->
+    <div id="demoNotice" class="demo-notice">
+      🔧 <strong>מצב הדגמה</strong> - הוסף פרמטרים ל-URL לשליחה ללקוח.<br>
+      <a href="#" onclick="showURLGuide(); return false;">[הספר לי איך ←]</a>
     </div>
 
-    <div id="csItems">
-      <div class="cs-zero">לא נבחרו שדרוגים עדיין</div>
-    </div>
+    <!-- Hero -->
+    <section class="hero">
+      <h1 id="heroName" class="hero-title">ברוך הבא 👋</h1>
+      <p id="heroSub" class="hero-subtitle">הסשן שלך מתחיל כאן</p>
+    </section>
 
-    <div class="cs-row total">
-      <span>סה"כ משוער</span>
-      <span class="total-amount" id="csTotal">₪1,480</span>
-    </div>
-  </div>
+    <!-- Wizard Nav -->
+    <nav id="wizardNav" class="wizard-nav hidden">
+      <div id="ws0" class="wizard-step active"></div>
+      <div id="ws1" class="wizard-step"></div>
+      <div id="ws2" class="wizard-step"></div>
+    </nav>
 
-  <div class="fu fu3">
-    <button class="cta-red" id="step2Btn" onclick="submitStep2()">
-      <span id="step2BtnTxt">אני מוכן - המשך לתיאום 🗓</span>
-      <span class="cta-arr">←</span>
-    </button>
-  </div>
-  
-  <div class="skip-wrap fu fu4">
-    <span class="skip-link" onclick="goStep(3)">דלג על השדרוגים והמשך לתיאום ←</span>
-  </div>
-
-</section>
-
-<section class="wizard-step" id="step-3">
-
-  <div class="success-wrap fu">
-    <div class="success-icon">🎉</div>
-    <h2 class="success-title">זה קורה! נתראה באולפן.</h2>
-    <p class="success-sub">
-      הפרטים שלך התקבלו במערכת. עכשיו נשאר רק דבר אחד: 
-      <strong>לנעול את התאריך ביומן.</strong> 
-      שריינו לעצמכם את הזמן המדויק ביומן של יקיר כדי להבטיח שהסשן ייצא לדרך.
-    </p>
-  </div>
-
-  <div class="action-grid fu fu1">
-    <div class="cal-card">
-      <a class="cal-btn" href="https://koalendar.com/e/Studio" target="_blank" rel="noopener">
-        📅 <span>שריין תאריך ביומן</span>
-      </a>
-      <p class="cal-hint">הדרך המהירה ביותר להבטיח את המקום שלך.</p>
-    </div>
-
-    <div class="wa-card">
-      <a class="wa-sec" id="waBtnFinal" href="#" target="_blank">
-        💬 <span>שאלה ליקיר ב-WhatsApp</span>
-      </a>
-    </div>
-  </div>
-
-  <div class="wifi-box fu fu3" id="wifiBox">
-    <div class="wifi-ico">📶</div>
-    <div class="wifi-info">
-      <div class="wifi-lbl">גולשים באולפן (כי צריך להעלות סטורי...)</div>
-      <div class="wifi-val" id="wifiSSID">StudioNet</div>
-      <div class="wifi-pass-row">
-        <span class="pass-label">סיסמה:</span>
-        <span class="wifi-pass-val" id="wifiPass">•••••••</span>
-        <button class="wifi-copy-btn" id="wifiRevBtn" onclick="revPass()">הצג</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="final-promo fu fu4">
-    <p>בינתיים, בואו לראות מה קורה מאחורי הקלעים:</p>
-    <a href="https://www.instagram.com/yakircohenproductions/" target="_blank" class="ig-link">@YakirCohenProductions</a>
-  </div>
-
-</section>
-
-</main>
-
-<div class="toast" id="toast"></div>
-
-<script>
-/* ══ CONFIG ══ */
-const CFG={
-  WA:'972587555456',
-  KOA:'https://koalendar.com/e/Studio',
-  W3F_KEY:'636e046c-45b4-4011-a947-1ffe575b5bb1',
-  W3F_EMAIL:'callwebboss@gmail.com',
-};
-
-/* ══ CONTENT MAP ══ */
-const CM={
-  song:{
-    label:'הקלטת שיר', tag:'SONG',
-    upsellTitle:'הסשן הוא רק ההתחלה',
-    upsellLead:'שדרוגים שהופכים הקלטה טובה ל<strong>תוצר מקצועי שמוכן לקהל</strong>.',
-    upsells:[
-      {id:'er',    ico:'⚡',  n:'Edit & Receive Now',        d:'חוסכים זמן יקר. עורכים יחד בזמן אמת ויוצאים מהאולפן עם השיר המוכן בכיס – ללא המתנה לסיום הסבב.',    p:490, o:null, save:null,  featured:true},
-      {id:'master', ico:'🎚️', n:'סאונד של רדיו (Mastering)',     d:'הליטוש הסופי שמוודא שהשיר יישמע עוצמתי בכל רמקול ובכל פלטפורמה. ההבדל בין חובבני למקצועי.',               p:290, o:390,  save:'חוסך ₪100', featured:false},
-      {id:'dist',   ico:'🌍',  n:'הפצה ל-Spotify ופלטפורמות',      d:'אנחנו נטפל בבירוקרטיה הדיגיטלית (UPC/ISRC) ונעלה אותך למגרש של הגדולים: Apple Music, TikTok ועוד.',           p:190, o:null, save:null,  featured:false},
-    ],
-  },
-  podcast:{
-    label:'הקלטת פודקאסט', tag:'PODCAST',
-    upsellTitle:'הפרק הוא רק ההתחלה',
-    upsellLead:'הגדל את החשיפה שלך עם <strong>שדרוגים שמביאים מאזינים חדשים</strong>.',
-    upsells:[
-      {id:'edit',   ico:'✂️',  n:'עריכה מלאה + תמלול',        d:'ניקוי רעשים, חיתוכים, מוזיקת רקע וקובץ תמלול Word מוכן. יוצאים עם פרק מוכן לפרסום מיידי.',                  p:490, o:590,  save:'חוסך ₪100', featured:true},
-      {id:'teaser', ico:'📹',  n:'טיזר וידאו לרשתות',            d:'קליפ של 60 שניות בפורמט Reels/TikTok – הדרך הטובה ביותר למשוך קהל מהרשתות החברתיות.',               p:350, o:450,  save:'חוסך ₪100', featured:false},
-      {id:'pdist',  ico:'🌍',  n:'הפצה גלובלית',               d:'הגדרה מלאה ב-Spotify, Apple ו-Google Podcasts. הגדרה חד-פעמית שמשמשת אותך לכל הפרקים הבאים.',           p:150, o:null, save:null,  featured:false},
-    ],
-  },
-  voiceover:{
-    label:'קריינות', tag:'VO',
-    upsellTitle:'קריינות מוכנה לשידור',
-    upsellLead:'שדרוגים שהופכים הקלטה גולמית ל<strong>תוצר שמוכן לשימוש מיידי</strong>.',
-    upsells:[
-      {id:'clean',  ico:'🎛️',  n:'ניקוי רעשים ומיקס',         d:'הקלטה נקייה, מאוזנת ומלוטשת לכל פלטפורמה – ברודקאסט, פרסומות או פודקאסטים. חובה לכל שימוש מקצועי.',                 p:190, o:null, save:null,  featured:true},
-      {id:'bgm',    ico:'🎶',  n:'מוזיקת רקע מורשית',           d:'התאמת מוזיקה מספרייה מקצועית (כולל רישיון שידור) וסנכרון מושלם עם הקריינות שלך.',                               p:250, o:null, save:null,  featured:false},
-    ],
-  },
-  kids:{
-    label:'בר/בת מצווה', tag:'BAR/BAT',
-    upsellTitle:'מזכרת לכל החיים',
-    upsellLead:'שדרוגים שהופכים את ההקלטה ל<strong>חוויה מרגשת ובלתי נשכחת</strong>.',
-    upsells:[
-      {id:'drasha',  ico:'📜',  n:'הקלטת דרשה מרגשת',   d:'הופכים את המילים לרגע קולנועי עם מוזיקת רקע מותאמת אישית, שתיצור שקט של התרגשות בקהל בזמן האירוע.',           p:550, o:750,  save:'חוסך ₪200', featured:true},
-      {id:'memclip', ico:'🎬',  n:'קליפ זיכרון מהאולפן',          d:'קליפ "מאחורי הקלעים" חווייתי ומרגש מהסשן. המזכרת המושלמת לשיתוף בוואטסאפ וברשתות.',                 p:350, o:450,  save:'חוסך ₪100', featured:false},
-      {id:'entrance',ico:'🎵',  n:'שיר כניסה ייחודי',          d:'עיבוד אישי (שינוי מילים/לחן מחודש) שהופך את הכניסה לאולם לרגע עוצמתי ואישי.',                                p:280, o:null, save:null,  featured:false},
-    ],
-  },
-};
-</script>
-
-/* ══ URL PARAMS ══ */
-const gp=k=>{const v=new URLSearchParams(location.search).get(k);return v?decodeURIComponent(v):null;};
-const P={
-  name:    gp('c')?.replace(/_/g,' ')||null,
-  type:    gp('type')||'song',
-  price:   parseInt(gp('p')||'1480',10),
-  pkg:     gp('pkg')||'Silver',
-  payLink: gp('pay')||'',
-  calLink: gp('cal')||CFG.KOA,
-  wifi:    gp('wifi')?gp('wifi').split('|'):['StudioNet','Studio2026!'],
-};
-const CT=CM[P.type]||CM.song;
-
-/* ══ STATE ══ */
-const STATE={agreed:false, step:1, cart:{}, submitted:false, wifiVis:false};
-
-/* ══ INIT ══ */
-function init(){
-  if(!gp('c')&&!gp('type')&&!gp('pay')){
-    document.getElementById('demoNotice').style.display='flex';
-    P.name=P.name||'לקוח להדגמה';
-  }
-  if(!P.name){
-    document.getElementById('errScreen').classList.add('show');
-    document.getElementById('portalMain').style.display='none';
-    document.querySelector('.topbar').style.display='none';
-    document.querySelector('.wizard-nav').style.display='none';
-    document.getElementById('errWa').href=`https://wa.me/${CFG.WA}`;
-    return;
-  }
-
-  const ps='₪'+P.price.toLocaleString('he-IL');
-
-  // Topbar
-  document.getElementById('tbName').textContent=P.name;
-  document.getElementById('tbTag').textContent=CT.tag;
-
-  // Step 1 content
-  document.getElementById('svcLabel').textContent=CT.label;
-  document.getElementById('heroName').textContent=`ברוך הבא, ${P.name.split(' ')[0]} 👋`;
-
-  // Step 2 content
-  document.getElementById('upsellTitle').textContent=CT.upsellTitle;
-  document.getElementById('upsellLead').innerHTML=CT.upsellLead;
-  document.getElementById('csBase').textContent=ps;
-  document.getElementById('csBasePkg').textContent=P.pkg;
-
-  // Step 3
-  const waFinal=`היי יקיר! 👋 אני ${P.name}. עברתי על הפורטל, ויש לי שאלה קטנה...`;
-  document.getElementById('waBtnFinal').href=`https://wa.me/${CFG.WA}?text=${encodeURIComponent(waFinal)}`;
-  document.getElementById('wifiSSID').textContent=P.wifi[0]||'StudioNet';
-
-  buildUpsells();
-  updateCart();
-}
-
-/* ══ WIZARD STEPS ══ */
-function goStep(n){
-  // מניעת מעבר לשלב 2 ללא אישור + הפעלת אנימציית ניעור (Shake)
-  if(n===2 && !STATE.agreed){
-    toast('יש לאשר את חוקי האולפן כדי להמשיך');
-    const btn=document.getElementById('step1Btn');
-    btn.style.animation='none';
-    btn.offsetHeight; // trigger reflow
-    btn.style.animation='shake 0.4s ease';
-    return;
-  }
-
-  [1,2,3].forEach(i=>{
-    document.getElementById('step-'+i).classList.toggle('active', i===n);
-  });
-  [0,1,2].forEach(i=>{
-    const s=document.getElementById('ws'+i);
-    s.classList.remove('active','done');
-    if(i+1 < n) s.classList.add('done');
-    if(i+1 === n) s.classList.add('active');
-  });
-  document.getElementById('wc01').classList.toggle('done', n>1);
-  document.getElementById('wc12').classList.toggle('done', n>2);
-  STATE.step=n;
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-/* ══ AGREEMENT ══ */
-function toggleAgree(){
-  STATE.agreed=!STATE.agreed;
-  document.getElementById('agreeRow').classList.toggle('on', STATE.agreed);
-  document.getElementById('step1Btn').disabled=!STATE.agreed;
-}
-
-/* ══ BUILD UPSELLS ══ */
-function buildUpsells(){
-  const wrap=document.getElementById('upsellCards');
-  wrap.innerHTML=CT.upsells.map(u=>`
-    <div class="upsell ${u.featured?'featured':''}" id="up_${u.id}">
-      <div class="u-ico">${u.ico}</div>
-      <div class="u-body">
-        ${u.featured?`<div class="u-feat-badge">⭐ המלצת האולפן</div>`:''}
-        <div class="u-name">${u.n}</div>
-        <div class="u-desc">${u.d}</div>
-        <div class="u-foot">
-          <span class="u-price">₪${u.p.toLocaleString('he-IL')}</span>
-          ${u.o?`<span class="u-old">₪${u.o.toLocaleString('he-IL')}</span>`:''}
-          ${u.save?`<span class="u-save">${u.save}</span>`:''}
-          <button class="u-add" id="btn_${u.id}" onclick="toggleCart('${u.id}',${u.p},'${u.n.replace(/'/g,"\\'")}')">הוסף +</button>
+    <!-- ══ STEP 1: RULES ══ -->
+    <section id="step-1" class="step active">
+      <div class="rules-card">
+        <h2 class="rules-title">🎙 חוקי האולפן</h2>
+        <div class="rules-list">
+          <div class="rule-item"><span class="rule-icon">🎵</span><span class="rule-text"><strong>תרגול מוקדם:</strong> קול מוכן הוא קול מנצח. הגעה עם חומר מתורגל תאפשר לנו להתמקד בביצוע וברגש.</span></div>
+          <div class="rule-item"><span class="rule-icon">💧</span><span class="rule-text"><strong>הידרציה:</strong> מיתרי הקול זקוקים ללחות. מומלץ לשתות מים כשעה לפני ההקלטה. קפה – במידה, אלכוהול – לא מומלץ.</span></div>
+          <div class="rule-item"><span class="rule-icon">😴</span><span class="rule-text"><strong>מנוחה:</strong> מיתרי הקול הם שריר. שנת לילה טובה היא ה"דלק" הכרחי לסשן מוצלח.</span></div>
+          <div class="rule-item"><span class="rule-icon">👥</span><span class="rule-text"><strong>מרחב יצירה:</strong> ניתן להביא עד 2 מלווים, בתנאי שהם מהווים קהל תומך ושקט.</span></div>
+          <div class="rule-item"><span class="rule-icon">🚫</span><span class="rule-text"><strong>תזונה:</strong> אין להכניס מזון לחדר ההקלטה. שתייה (מים) בלבד. הפסקות אוכל בחלל האירוח.</span></div>
+          <div class="rule-item"><span class="rule-icon">📱</span><span class="rule-text"><strong>מצב טיסה:</strong> יש להעביר טלפונים למצב שקט מוחלט (ללא רטט) למניעת רעשים אלקטרומגנטיים.</span></div>
+          <div class="rule-item"><span class="rule-icon">⏰</span><span class="rule-text"><strong>ביטולים:</strong> ביטול/דחייה יתבצעו לפחות 24 שעות מראש. אי הגעה מאוחרת תגרור חיוב של 50%.</span></div>
+          <div class="rule-item"><span class="rule-icon">🎛️</span><span class="rule-text"><strong>אותנטיות:</strong> אנחנו משתמשים בטכנולוגיה מתקדמת, אך ככל שהביצוע המקורי טוב יותר – התוצאה תישמע טבעית יותר.</span></div>
         </div>
       </div>
-    </div>
-  `).join('');
-}
-
-/* ══ CART ══ */
-function toggleCart(id, price, name){
-  if(STATE.cart[id]){
-    delete STATE.cart[id];
-  } else {
-    STATE.cart[id]={price, name};
-  }
-  const card=document.getElementById('up_'+id);
-  const btn=document.getElementById('btn_'+id);
-  const sel=!!STATE.cart[id];
-  card.classList.toggle('selected', sel);
-  btn.textContent=sel?'✓ הוסר':'הוסף +';
-  updateCart();
-}
-
-function updateCart(){
-  const ps='₪'+P.price.toLocaleString('he-IL');
-  let extra=0;
-  const items=Object.values(STATE.cart);
-  items.forEach(it=>extra+=it.price);
-  const total=P.price+extra;
-
-  const csItems=document.getElementById('csItems');
-  if(items.length===0){
-    csItems.innerHTML='<div class="cs-zero">לא נבחרו שדרוגים עדיין</div>';
-  } else {
-    csItems.innerHTML=items.map(it=>`
-      <div class="cs-row">
-        <span>${it.name}</span>
-        <span>₪${it.price.toLocaleString('he-IL')}</span>
+      
+      <div id="agreeRow" class="agree-row" onclick="toggleAgree()">
+        <input type="checkbox" id="agreeCheck" class="agree-checkbox" onclick="event.stopPropagation()">
+        <label for="agreeCheck" class="agree-label">✓ קראתי, הבנתי ואני מסכים לחוקי האולפן</label>
       </div>
-    `).join('');
-  }
-  document.getElementById('csTotal').textContent='₪'+total.toLocaleString('he-IL');
-}
+      
+      <button id="step1Btn" class="btn-primary" onclick="goStep(2)" disabled>אני מוכן, בואו נתחיל 🎵 ←</button>
+    </section>
 
-/* ══ STEP 2 SUBMIT → Web3Forms → Step 3 ══ */
-async function submitStep2(){
-  if(STATE.submitted){goStep(3);return;}
-  const btn=document.getElementById('step2Btn');
-  btn.disabled=true;
-  document.getElementById('step2BtnTxt').textContent='שולח...';
+    <!-- ══ STEP 2: ONBOARDING + UPSELLS ══ -->
+    <section id="step-2" class="step">
+      <h2 id="upsellTitle" class="text-center" style="font-family:var(--font-luxury); font-size:1.4rem; margin-bottom:var(--spacing-sm);">🚀 שדרוגים ייחודיים</h2>
+      <p id="upsellLead" class="text-center" style="color:var(--color-gray); margin-bottom:var(--spacing-lg);">בואו ניקח את זה לקצה</p>
+      
+      <!-- Image Upload -->
+      <div class="image-upload">
+        <div class="image-preview" id="imgPreview">📷</div>
+        <input type="file" id="imgInput" class="image-input" accept="image/*" onchange="handleImageUpload(this)">
+        <label for="imgInput" class="image-label">📤 העלה תמונת חוגג/ת</label>
+        <p style="font-size:0.8rem; color:var(--color-gray); margin-top:var(--spacing-xs);">תשמש כרקע אישי בפורטל</p>
+      </div>
+      
+      <!-- Voice Brief -->
+      <div class="voice-record">
+        <button id="voiceBtn" class="voice-btn" onclick="toggleRecording()">🎤</button>
+        <p id="voiceStatus" class="voice-status">לחץ להקלטת דגשים אישיים (אופציונלי)</p>
+      </div>
+      
+      <!-- Upsells -->
+      <div id="upsellCards" class="upsell-grid"></div>
+      
+      <!-- Cart Summary -->
+      <div class="cart-summary">
+        <div class="cart-row"><span>חבילה בסיסית (<span id="csBasePkg">Silver</span>)</span><span id="csBase">₪1,480</span></div>
+        <div id="csItems" class="cart-items">לא נבחרו שדרוגים עדיין</div>
+        <div class="cart-row total"><span>סה"כ משוער</span><span id="csTotal">₪1,480</span></div>
+      </div>
+      
+      <button id="step2Btn" class="btn-primary" onclick="submitStep2()">
+        <span id="step2BtnTxt">אני מוכן - המשך לתיאום 🗓</span>
+      </button>
+      <button class="btn-secondary" onclick="skipUpsells()">דלג על השדרוגים והמשך ←</button>
+    </section>
 
-  const items=Object.values(STATE.cart);
-  const extra=items.reduce((s,it)=>s+it.price,0);
-  const total=P.price+extra;
-  const upsellStr=items.length
-    ? items.map(it=>`${it.name} (₪${it.price})`).join(' | ')
-    : 'ללא שדרוגים';
+    <!-- ══ STEP 3: DASHBOARD ══ -->
+    <section id="step-3" class="step">
+      <div style="text-align:center; padding:var(--spacing-lg); background:linear-gradient(135deg,#E8F5E9,#C8E6C9); border-radius:var(--radius-lg); margin-bottom:var(--spacing-lg);">
+        <div style="font-size:2.5rem; margin-bottom:var(--spacing-sm);">🎉</div>
+        <h2 style="font-family:var(--font-luxury); font-size:1.4rem; margin-bottom:var(--spacing-xs);">זה קורה!</h2>
+        <p style="color:var(--color-gray);">נתראה באולפן ✨</p>
+      </div>
+      
+      <!-- Package Card -->
+      <div class="dashboard-card">
+        <span id="pkgBadge" class="package-badge">Silver</span>
+        <h3 class="dashboard-title">מה מחכה לך בסשן:</h3>
+        <ul id="includesList" class="includes-list">
+          <!-- Populated by JS -->
+        </ul>
+      </div>
+      
+      <!-- WiFi -->
+      <div class="dashboard-card wifi-card">
+        <h3 class="dashboard-title">📶 WiFi באולפן</h3>
+        <div id="wifiSSID" class="wifi-ssid">StudioNet</div>
+        <div id="wifiPass" class="wifi-pass hidden">••••••••</div>
+        <button id="wifiRevBtn" class="wifi-btn" onclick="revPass()">הצג סיסמה</button>
+      </div>
+      
+      <!-- Upsells Reminder -->
+      <div class="dashboard-card">
+        <h3 class="dashboard-title">🎁 עדיין אפשר לשדרג</h3>
+        <p style="font-size:0.9rem; color:var(--color-gray); margin-bottom:var(--spacing-sm);">השדרוגים זמינים עד תחילת הסשן</p>
+        <button class="btn-secondary" onclick="goStep(2)">צפה בשדרוגים ←</button>
+      </div>
+      
+      <!-- Viral Share -->
+      <div class="dashboard-card viral-card">
+        <h3 class="dashboard-title">💝 הזמן חבר</h3>
+        <p style="font-size:0.9rem; color:var(--color-gray); margin-bottom:var(--spacing-sm);">פנק חבר בקליפ מתנה מהסשן שלך</p>
+        <input type="tel" id="friendPhone" class="viral-input" placeholder="הזן מספר טלפון (05...)">
+        <button class="btn-primary" style="background:var(--color-black); margin-top:var(--spacing-sm);" onclick="sendToFriend()">📲 שלח מתנה ב-WhatsApp</button>
+      </div>
+      
+      <!-- Calendar -->
+      <div class="dashboard-card text-center">
+        <h3 class="dashboard-title">📅 שריין את התאריך</h3>
+        <p style="font-size:0.9rem; color:var(--color-gray); margin-bottom:var(--spacing-sm);">הדרך המהירה להבטיח את המקום שלך</p>
+        <a id="calBtn" href="#" class="btn-primary" style="background:var(--color-black);">שריין תאריך ביומן ←</a>
+      </div>
+      
+      <!-- Help -->
+      <div class="text-center" style="margin-top:var(--spacing-lg);">
+        <a id="waBtnFinal" href="#" class="btn-secondary">💬 שאלה ליקיר ב-WhatsApp</a>
+      </div>
+    </section>
 
-  const payload={
-    access_key: CFG.W3F_KEY,
-    subject: `🎙 ${P.name} השלים פורטל - ${CT.label}`,
-    from_name: P.name||'לקוח',
-    to_email: CFG.W3F_EMAIL,
-    'שם': P.name||'-',
-    'שירות': CT.label,
-    'חבילה': P.pkg||'-',
-    'מחיר בסיסי': '₪'+P.price,
-    'שדרוגים שנבחרו': upsellStr,
-    'סה"כ משוער': '₪'+total,
-    botcheck: ''
-  };
+    <!-- Gal Assistant -->
+    <button class="gal-btn" onclick="toggleGal()" aria-label="עזרה">👩‍💼</button>
+    <div id="galPanel" class="gal-panel">
+      <div class="gal-header">
+        <span class="gal-title">👩‍💼 גל - האסיסטנטית שלך</span>
+        <button class="gal-close" onclick="toggleGal()">×</button>
+      </div>
+      <div class="gal-faq">
+        <div class="gal-question" onclick="toggleFaq(this)">📍 איך מגיעים לאולפן?</div>
+        <div class="gal-answer">עמק איילון 34, מודיעין. חניה חופשית צמודה. <a href="https://maps.app.goo.gl/zRR5mi6Nmi6g3wg57" target="_blank" style="color:var(--color-red);">פתח Waze →</a></div>
+        
+        <div class="gal-question" onclick="toggleFaq(this)">⏰ מה שעות הפעילות?</div>
+        <div class="gal-answer">א'-ה': 10:00-22:00, ו': 10:00-14:00. שבת: סגור.</div>
+        
+        <div class="gal-question" onclick="toggleFaq(this)">💳 איך משלמים?</div>
+        <div class="gal-answer">כל התשלומים דרך חשבונית ירוקה מאובטחת. ניתן גם במזומן באולפן.</div>
+        
+        <div class="gal-question" onclick="toggleFaq(this)">🎁 מה קורה אם אני מאחר?</div>
+        <div class="gal-answer">נשמח שתעדכן ב-WhatsApp. נעשה כמיטב יכולתנו להתאים את הזמן, אך זמן הסשן עשוי להתקצר.</div>
+      </div>
+    </div>
 
-  try{
-    const res=await fetch('https://api.web3forms.com/submit',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify(payload)
-    });
-    const data=await res.json();
-    if(!data.success) throw new Error('fail');
-    STATE.submitted=true;
-    toast('✅ יקיר קיבל התראה!');
-    setTimeout(()=>goStep(3), 900);
-  } catch(err){
-    // WhatsApp fallback
-    const msg=`היי יקיר! 🎙\n${P.name} השלים פורטל\n${CT.label} · ${P.pkg}\nשדרוגים: ${upsellStr}\nסה"כ: ₪${total}`;
-    window.open(`https://wa.me/${CFG.WA}?text=${encodeURIComponent(msg)}`,'_blank');
-    toast('פותח WhatsApp כגיבוי...');
-    STATE.submitted=true;
-    setTimeout(()=>goStep(3), 1400);
-  } finally{
-    btn.disabled=false;
-    document.getElementById('step2BtnTxt').textContent='אני מוכן - המשך לתיאום 🗓';
-  }
-}
+  </div>
 
-/* ══ WIFI ══ */
-let wifiVis=false;
-function revPass(){
-  const passEl=document.getElementById('wifiPass');
-  const btn=document.getElementById('wifiRevBtn');
-  if(!wifiVis){
-    passEl.textContent=P.wifi[1]||'';
-    btn.textContent='העתק';
-    wifiVis=true;
-    return;
-  }
-  navigator.clipboard.writeText(P.wifi[1]||'').then(()=>{
-    btn.textContent='✓';btn.classList.add('ok');
-    toast('🔐 סיסמת WiFi הועתקה!');
-    setTimeout(()=>{btn.textContent='העתק';btn.classList.remove('ok');},2000);
-  });
-}
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
 
-/* ══ URL GUIDE (demo) ══ */
-function showURLGuide(){
-  const ex=`${location.origin}${location.pathname}?c=שם_הלקוח&type=song&p=1480&pkg=Silver&pay=https://invoiceguru.co.il/pay/XXX&wifi=StudioNet|סיסמה`;
-  navigator.clipboard?.writeText(ex);
-  alert('URL לדוגמה:\n\n'+ex+'\n\nפרמטרים:\nc = שם (רווחים כ-_)\ntype = song | podcast | voiceover | kids\np = מחיר בסיסי\npkg = שם חבילה\npay = לינק תשלום\nwifi = SSID|סיסמה');
-}
+  <!-- ══ CONFIG & DATA ══ -->
+  <script>
+    const CFG = {
+      WA: '972587555456',
+      W3F_KEY: '636e046c-45b4-4011-a947-1ffe575b5bb1', // 🔑 החלף במפתח שלך
+      W3F_EMAIL: 'callwebboss@gmail.com',
+      SHEETS_API: 'https://sheets.googleapis.com/v4/spreadsheets/YOUR_SHEET_ID/values/Clients!A:L',
+      SHEETS_KEY: 'AIzaSyD70zHgKTvzTYRhgW0Xg5rQF5-7ema3qwwY', // 🔑 החלף במפתח Google API שלך
+      CLAUDE_API: 'https://api.anthropic.com/v1/messages', // 🔑 החלף במפתח Claude שלך
+      KOA: 'https://koalendar.com/e/Studio',
+      DRIVE_FOLDER: 'YOUR_DRIVE_FOLDER_ID'
+    };
 
-/* ══ TOAST ══ */
-let _tt;
-function toast(msg){
-  const el=document.getElementById('toast');
-  el.textContent=msg;el.classList.add('show');
-  clearTimeout(_tt);_tt=setTimeout(()=>el.classList.remove('show'),2800);
-}
+    const CM = {
+      song: {
+        label: 'הקלטת שיר',
+        tag: '🎵 זמרים',
+        upsellTitle: '🚀 שדרוגים להקלטת שיר',
+        upsellLead: 'הקלטה טובה היא רק הבסיס. הנה דרכים להפוך את הסשן למוצר מוגמר ומקצועי.',
+        upsells: [
+          { id:'cloud', n:'☁️ אחסון לכל החיים', d:'נשמור את קבצי המאסטר שלך בשרתים פרטיים לנצח. גישה מכל מקום.', p:49, o:199, save:'75% OFF', featured:true, ico:'☁️' },
+          { id:'bts', n:'🎬 תיעוד 4K', d:'צילום מקצועי של הסשן + עריכת Reels מוכן לסושיאל.', p:499, o:850, save:'₪351 חסכון', featured:false, ico:'🎬' },
+          { id:'hour', n:'⏰ שעה אקסטרה', d:'ליצור בראש שקט, בלי לוחץ של זמן.', p:250, o:350, save:'₪100 חסכון', featured:false, ico:'⏰' },
+          { id:'drinks', n:'🥤 בר פרימיום', d:'קולה/זירו/סודה ללא הגבלה לכל המשתתפים.', p:89, o:150, save:'₪61 חסכון', featured:false, ico:'🥤' }
+        ],
+        includes: ['הקלטה מקצועית באולפן אקוסטי', 'מיקס ומסטרינג ברמה הגבוהה ביותר', 'מסירת קבצים מוכנים (WAV+MP3)', 'ליווי אישי של יקיר לכל אורך הדרך']
+      },
+      podcast: {
+        label: 'פודקאסט',
+        tag: '🎙️ קריינות',
+        upsellTitle: '🚀 שדרוגים לפודקאסט',
+        upsellLead: 'תוכן איכותי חייב להישמע מעולה. הנה דרכים לשדרג את הפרק שלך.',
+        upsells: [
+          { id:'cloud', n:'☁️ אחסון פרקים', d:'אחסון מאובטח לכל הפרקים שלך עם גישה נוחה.', p:49, o:199, save:'75% OFF', featured:true, ico:'☁️' },
+          { id:'intro', n:'🎵 ג׳ינגל מותאם', d:'ג׳ינגל מקורי לפודקאסט שלך שייזכר.', p:299, o:499, save:'₪200 חסכון', featured:false, ico:'🎵' },
+          { id:'edit', n:'✂️ עריכה מתקדמת', d:'הסרת רעשים, איזון קולות, הוספת אפקטים.', p:199, o:350, save:'₪151 חסכון', featured:false, ico:'✂️' },
+          { id:'thumb', n:'🖼️ תמונת פרק', d:'עיצוב תמונה מקצועית לפרק לסושיאל.', p:149, o:250, save:'₪101 חסכון', featured:false, ico:'🖼️' }
+        ],
+        includes: ['הקלטה באולפן שקט עם ציוד מקצועי', 'עריכה בסיסית: הסרת רעשים ופאוזות', 'מסטרינג לאופטימיזציה לפלטפורמות', 'הדרכה להעלאה לספוטיפיי/אפל']
+      },
+      // Add more types as needed
+    };
 
-window.addEventListener('DOMContentLoaded',init);
-</script>
+    // ══ URL PARAMS ══
+    const gp = k => { const v = new URLSearchParams(location.search).get(k); return v ? decodeURIComponent(v) : null; };
+    const P = {
+      name: gp('c')?.replace(/_/g, ' ') || null,
+      type: gp('type') || 'song',
+      price: parseInt(gp('p') || '1480', 10),
+      pkg: gp('pkg') || 'Silver',
+      payLink: gp('pay') || '',
+      calLink: gp('cal') || CFG.KOA,
+      wifi: gp('wifi') ? gp('wifi').split('|') : ['StudioNet', 'Studio2026!'],
+      phone: gp('phone') || '' // 🔑 קריטי: מספר טלפון לאימות
+    };
+    const CT = CM[P.type] || CM.song;
+
+    // ══ STATE ══
+    const STATE = {
+      agreed: false,
+      step: 1,
+      cart: {},
+      submitted: false,
+      wifiVis: false,
+      recording: false,
+      mediaRecorder: null,
+      audioChunks: [],
+      uploadedImg: null
+    };
+
+    // ══ INIT ══
+    function init() {
+      // Demo mode check
+      if (!gp('c') && !gp('type') && !gp('pay')) {
+        document.getElementById('demoNotice').classList.add('show');
+        P.name = P.name || 'לקוח להדגמה';
+      }
+      
+      // Auth check - if no phone, show error
+      if (!P.phone && !gp('c')) {
+        document.getElementById('errScreen').classList.add('show');
+        document.getElementById('portalMain').style.display = 'none';
+        document.getElementById('errWa').href = `https://wa.me/${CFG.WA}`;
+        return;
+      }
+
+      const ps = '₪' + P.price.toLocaleString('he-IL');
+
+      // Populate UI
+      document.getElementById('tbName').textContent = P.name?.split(' ')[0] || 'אורח';
+      document.getElementById('tbAvatar').textContent = (P.name?.[0] || 'י');
+      document.getElementById('heroName').textContent = `ברוך הבא, ${P.name?.split(' ')[0] || 'יקיר'} 👋`;
+      document.getElementById('heroSub').textContent = CT.tag;
+      
+      document.getElementById('upsellTitle').textContent = CT.upsellTitle;
+      document.getElementById('upsellLead').innerHTML = CT.upsellLead;
+      document.getElementById('csBase').textContent = ps;
+      document.getElementById('csBasePkg').textContent = P.pkg;
+      document.getElementById('pkgBadge').textContent = P.pkg;
+      
+      document.getElementById('includesList').innerHTML = CT.includes.map(i => `<li class="include-item">${i}</li>`).join('');
+      document.getElementById('wifiSSID').textContent = P.wifi[0] || 'StudioNet';
+      document.getElementById('calBtn').href = P.calLink;
+      
+      const waFinal = `היי יקיר! 👋 אני ${P.name}. עברתי על הפורטל, ויש לי שאלה קטנה...`;
+      document.getElementById('waBtnFinal').href = `https://wa.me/${CFG.WA}?text=${encodeURIComponent(waFinal)}`;
+
+      buildUpsells();
+      updateCart();
+      
+      // Show wizard nav after login (simulated)
+      if (P.phone || gp('c')) {
+        document.getElementById('wizardNav').classList.remove('hidden');
+      }
+    }
+
+    // ══ WIZARD NAVIGATION ══
+    function goStep(n) {
+      if (n === 2 && !STATE.agreed) {
+        toast('יש לאשר את חוקי האולפן כדי להמשיך');
+        const btn = document.getElementById('step1Btn');
+        btn.style.animation = 'none';
+        btn.offsetHeight; // reflow
+        btn.style.animation = 'shake 0.4s ease';
+        return;
+      }
+
+      [1,2,3].forEach(i => {
+        document.getElementById('step-'+i).classList.toggle('active', i === n);
+      });
+      [0,1,2].forEach(i => {
+        const s = document.getElementById('ws'+i);
+        s.classList.remove('active','done');
+        if (i+1 < n) s.classList.add('done');
+        if (i+1 === n) s.classList.add('active');
+      });
+      STATE.step = n;
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    // ══ AGREEMENT ══
+    function toggleAgree() {
+      STATE.agreed = !STATE.agreed;
+      document.getElementById('agreeRow').classList.toggle('on', STATE.agreed);
+      document.getElementById('step1Btn').disabled = !STATE.agreed;
+    }
+
+    // ══ UPSELLS ══
+    function buildUpsells() {
+      const wrap = document.getElementById('upsellCards');
+      wrap.innerHTML = CT.upsells.map(u => `
+        <div id="up_${u.id}" class="upsell-card" onclick="toggleCart('${u.id}', ${u.p}, '${u.n}')">
+          ${u.featured ? '<span class="upsell-badge">⭐ המלצת האולפן</span>' : ''}
+          <div class="upsell-icon">${u.ico}</div>
+          <div class="upsell-name">${u.n}</div>
+          <div class="upsell-desc">${u.d}</div>
+          <div class="upsell-price">
+            <span class="upsell-price-main">₪${u.p.toLocaleString('he-IL')}</span>
+            ${u.o ? `<span class="upsell-price-old">₪${u.o.toLocaleString('he-IL')}</span>` : ''}
+            ${u.save ? `<span class="upsell-save">${u.save}</span>` : ''}
+          </div>
+          <button id="btn_${u.id}" class="upsell-btn">הוסף +</button>
+        </div>
+      `).join('');
+    }
+
+    function toggleCart(id, price, name) {
+      if (STATE.cart[id]) {
+        delete STATE.cart[id];
+      } else {
+        STATE.cart[id] = { price, name };
+      }
+      const card = document.getElementById('up_'+id);
+      const btn = document.getElementById('btn_'+id);
+      const sel = !!STATE.cart[id];
+      card.classList.toggle('selected', sel);
+      btn.textContent = sel ? '✓ הוסר' : 'הוסף +';
+      updateCart();
+    }
+
+    function updateCart() {
+      const items = Object.values(STATE.cart);
+      const extra = items.reduce((s, it) => s + it.price, 0);
+      const total = P.price + extra;
+
+      const csItems = document.getElementById('csItems');
+      csItems.innerHTML = items.length === 0 
+        ? 'לא נבחרו שדרוגים עדיין' 
+        : items.map(it => `<div>• ${it.name} ₪${it.price.toLocaleString('he-IL')}</div>`).join('');
+      
+      document.getElementById('csTotal').textContent = '₪' + total.toLocaleString('he-IL');
+    }
+
+    function skipUpsells() {
+      STATE.cart = {};
+      updateCart();
+      submitStep2();
+    }
+
+    // ══ SUBMIT STEP 2 ══
+    async function submitStep2() {
+      if (STATE.submitted) { goStep(3); return; }
+      
+      const btn = document.getElementById('step2Btn');
+      btn.disabled = true;
+      document.getElementById('step2BtnTxt').textContent = 'שולח...';
+
+      const items = Object.values(STATE.cart);
+      const extra = items.reduce((s, it) => s + it.price, 0);
+      const total = P.price + extra;
+      const upsellStr = items.length ? items.map(it => `${it.name} (₪${it.price})`).join(' | ') : 'ללא שדרוגים';
+
+      const payload = {
+        access_key: CFG.W3F_KEY,
+        subject: `🎙 ${P.name} השלים פורטל - ${CT.label}`,
+        from_name: P.name || 'לקוח',
+        to_email: CFG.W3F_EMAIL,
+        'שם': P.name || '-',
+        'שירות': CT.label,
+        'חבילה': P.pkg || '-',
+        'מחיר בסיסי': '₪' + P.price,
+        'שדרוגים שנבחרו': upsellStr,
+        'סה"כ משוער': '₪' + total,
+        'טלפון': P.phone || '-',
+        'תמונה': STATE.uploadedImg || '-',
+        'הערות קוליות': 'יישלח בנפרד דרך Claude API',
+        botcheck: ''
+      };
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (!data.success) throw new Error('fail');
+        STATE.submitted = true;
+        toast('✅ יקיר קיבל התראה!');
+        setTimeout(() => goStep(3), 900);
+      } catch (err) {
+        // Fallback to WhatsApp
+        const msg = `היי יקיר! 🎙\n${P.name} השלים פורטל\n${CT.label} · ${P.pkg}\nשדרוגים: ${upsellStr}\nסה"כ: ₪${total}`;
+        window.open(`https://wa.me/${CFG.WA}?text=${encodeURIComponent(msg)}`, '_blank');
+        toast('פותח WhatsApp כגיבוי...');
+        STATE.submitted = true;
+        setTimeout(() => goStep(3), 1400);
+      } finally {
+        btn.disabled = false;
+        document.getElementById('step2BtnTxt').textContent = 'אני מוכן - המשך לתיאום 🗓';
+      }
+    }
+
+    // ══ WIFI ══
+    function revPass() {
+      const passEl = document.getElementById('wifiPass');
+      const btn = document.getElementById('wifiRevBtn');
+      if (!STATE.wifiVis) {
+        passEl.textContent = P.wifi[1] || '';
+        passEl.classList.remove('hidden');
+        btn.textContent = 'העתק';
+        STATE.wifiVis = true;
+        return;
+      }
+      navigator.clipboard.writeText(P.wifi[1] || '').then(() => {
+        btn.textContent = '✓';
+        btn.classList.add('ok');
+        toast('🔐 סיסמת WiFi הועתקה!');
+        setTimeout(() => { btn.textContent = 'העתק'; btn.classList.remove('ok'); }, 2000);
+      });
+    }
+
+    // ══ IMAGE UPLOAD ══
+    function handleImageUpload(input) {
+      const file = input.files[0];
+      if (!file) return;
+      
+      const reader = new FileReader();
+      reader.onload = e => {
+        document.getElementById('imgPreview').innerHTML = `<img src="${e.target.result}" alt="תמונה">`;
+        // 🔑 כאן תוסיף העלאה ל-Drive API
+        // STATE.uploadedImg = driveUrl;
+        toast('📷 תמונה נטענה בהצלחה!');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // ══ VOICE RECORDING ══
+    async function toggleRecording() {
+      const btn = document.getElementById('voiceBtn');
+      const status = document.getElementById('voiceStatus');
+      
+      if (!STATE.recording) {
+        // Start recording
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          STATE.mediaRecorder = new MediaRecorder(stream);
+          STATE.audioChunks = [];
+          
+          STATE.mediaRecorder.ondataavailable = e => STATE.audioChunks.push(e.data);
+          STATE.mediaRecorder.onstop = async () => {
+            const audioBlob = new Blob(STATE.audioChunks, { type: 'audio/wav' });
+            // 🔑 כאן תשלח ל-Claude API לתמלול
+            // const transcript = await sendToClaude(audioBlob);
+            // saveToSheets({ voice_notes: transcript });
+            toast('🎤 ההקלטה נשמרה!');
+            stream.getTracks().forEach(t => t.stop());
+          };
+          
+          STATE.mediaRecorder.start();
+          STATE.recording = true;
+          btn.classList.add('recording');
+          btn.textContent = '⏹';
+          status.textContent = 'מקליט... לחץ שוב לעצירה';
+          
+        } catch (err) {
+          toast('❌ לא ניתן לגשת למיקרופון');
+          console.error(err);
+        }
+      } else {
+        // Stop recording
+        STATE.mediaRecorder.stop();
+        STATE.recording = false;
+        btn.classList.remove('recording');
+        btn.textContent = '🎤';
+        status.textContent = '✅ ההקלטה הושלמה';
+      }
+    }
+
+    // ══ VIRAL SHARE ══
+    function sendToFriend() {
+      const phone = document.getElementById('friendPhone').value.replace(/\D/g, '');
+      if (!phone || phone.length < 10) {
+        toast('📱 הזן מספר טלפון תקין');
+        return;
+      }
+      const msg = `היי! ${P.name} סיים הרגע סשן VIP אצל יקיר כהן ושלח לך מתנה: שובר לקליפ במתנה בסשן הבא שלך! לצפייה: ${location.origin}/view.html?code=NOY-2026-XXXX`;
+      window.open(`https://wa.me/972${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+      toast('🎁 נשלח ב-WhatsApp!');
+      
+      // 🔑 כאן תעדכן Sheets עם Friend_Phone
+      // updateSheets({ friend_phone: phone });
+    }
+
+    // ══ GAL ASSISTANT ══
+    function toggleGal() {
+      document.getElementById('galPanel').classList.toggle('active');
+    }
+    
+    function toggleFaq(el) {
+      el.classList.toggle('active');
+    }
+
+    // ══ UTILS ══
+    let _tt;
+    function toast(msg) {
+      const el = document.getElementById('toast');
+      el.textContent = msg;
+      el.classList.add('show');
+      clearTimeout(_tt);
+      _tt = setTimeout(() => el.classList.remove('show'), 2800);
+    }
+
+    function showURLGuide() {
+      const ex = `${location.origin}${location.pathname}?c=שם_הלקוח&type=song&p=1480&pkg=Silver&pay=https://invoiceguru.co.il/pay/XXX&phone=0501234567&wifi=StudioNet|סיסמה`;
+      navigator.clipboard?.writeText(ex);
+      alert('🔗 URL לדוגמה:\n\n' + ex + '\n\nפרמטרים:\n• c = שם (רווחים כ-_)\n• type = song|podcast|voiceover|kids\n• p = מחיר בסיסי\n• pkg = Silver|Gold|Platinum\n• pay = לינק תשלום\n• phone = מספר טלפון (חובה!)\n• wifi = SSID|סיסמה');
+    }
+
+    // ══ GOOGLE SHEETS INTEGRATION (js/sheets.js inline for now) ══
+    async function fetchClientData(phone) {
+      try {
+        const url = `${CFG.SHEETS_API}?key=${CFG.SHEETS_KEY}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        const rows = data.values || [];
+        // Find client by phone (column A)
+        return rows.find(row => row[0] === phone) || null;
+      } catch (err) {
+        console.error('Sheets error:', err);
+        return null;
+      }
+    }
+
+    async function updateClientData(phone, updates) {
+      // 🔑 זה דורש Service Account או Apps Script Web App
+      // לדוגמה: POST ל-https://script.google.com/macros/s/YOUR_SCRIPT/exec
+      console.log('Updating Sheets for', phone, updates);
+      // Implement based on your Make.com/Apps Script setup
+    }
+
+    // ══ CLAUDE API INTEGRATION ══
+    async function sendToClaude(audioBlob) {
+      // 🔑 דורש API Key ו-Proxy צד-שרת לאבטחה
+      const formData = new FormData();
+      formData.append('file', audioBlob, 'voice.wav');
+      // Implement based on your backend setup
+      console.log('Sending to Claude:', audioBlob);
+      return 'תמלול לדוגמה - יישלח דרך ה-Proxy שלך';
+    }
+
+    // ══ INIT ══
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
 </body>
 </html>
