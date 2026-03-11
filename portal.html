@@ -27,10 +27,11 @@
   --r:15px;--r2:10px;--r3:7px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html, body{overflow-x:hidden;}
 html{scroll-behavior:smooth;}
 body{
   font-family:'Heebo',sans-serif;background:var(--bg);color:var(--ch);
-  direction:rtl;min-height:100vh;overflow-x:hidden;
+  direction:rtl;min-height:100vh;
   -webkit-font-smoothing:antialiased;line-height:1.65;
 }
 body::after{
@@ -49,6 +50,7 @@ body::after{
 .topbar{
   position:fixed;top:0;left:0;right:0;height:58px;z-index:100;
   background:rgba(250,250,248,0.96);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  -webkit-backface-visibility:hidden;
   border-bottom:1px solid var(--border);
   display:flex;align-items:center;justify-content:space-between;padding:0 24px;
 }
@@ -64,6 +66,7 @@ body::after{
 .wizard-nav{
   position:fixed;top:58px;left:0;right:0;z-index:99;
   background:rgba(250,250,248,0.96);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  -webkit-backface-visibility:hidden;
   border-bottom:1px solid var(--border);padding:14px 24px;
 }
 .wn-t{
@@ -315,7 +318,10 @@ main{position:relative;z-index:10;padding:150px 24px 80px;max-width:680px;margin
 
 /* ── ANIMATIONS ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
-.fu{animation:fadeUp 0.55s ease both;}
+@keyframes shake{0%,100%{transform:translateX(0);}20%,60%{transform:translateX(-4px);}40%,80%{transform:translateX(4px);}}
+
+/* הוספתי את תזמון התנועה היוקרתי של אפל */
+.fu{animation:fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;}
 .fu1{animation-delay:.07s;}.fu2{animation-delay:.14s;}.fu3{animation-delay:.21s;}
 .fu4{animation-delay:.28s;}.fu5{animation-delay:.35s;}.fu6{animation-delay:.42s;}
 
@@ -329,7 +335,6 @@ main{position:relative;z-index:10;padding:150px 24px 80px;max-width:680px;margin
 </head>
 <body>
 
-<!-- Rotating watermark -->
 <div class="bg-mic" aria-hidden="true">
 <svg viewBox="0 0 100 145" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="31" y="2" width="38" height="74" rx="19" stroke="#1A1A1A" stroke-width="2.5"/>
@@ -342,7 +347,6 @@ main{position:relative;z-index:10;padding:150px 24px 80px;max-width:680px;margin
 </svg>
 </div>
 
-<!-- ERROR SCREEN -->
 <div id="errScreen">
 <div style="font-size:2.5rem;margin-bottom:16px;">🎙</div>
 <h1 style="font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:1.7rem;margin-bottom:8px;">אופס, משהו במיקס התערבב</h1>
@@ -350,7 +354,6 @@ main{position:relative;z-index:10;padding:150px 24px 80px;max-width:680px;margin
 <a id="errWa" href="#" class="cta-red" style="max-width:280px;margin:0 auto;">💬 WhatsApp ליקיר <span class="cta-arr">←</span></a>
 </div>
 
-<!-- TOPBAR -->
 <header class="topbar">
 <div class="tb-logo">
 <div class="tb-icon">
@@ -398,58 +401,85 @@ main{position:relative;z-index:10;padding:150px 24px 80px;max-width:680px;margin
 ══════════════════════════════════════════ -->
 <section class="wizard-step active" id="step-1">
 
-<div class="fu">
-  <div class="eyebrow"><div class="ey-line"></div><div class="ey-text" id="svcLabel">הכנה לסשן</div></div>
-  <h1 class="h1" id="heroName">ברוך הבא</h1>
-  <p class="lead">כדי שנגיע לתוצאה של 100%, <strong>יש כמה דברים שחשוב לסגור</strong> לפני שנלחץ על Record. קריאה קצרה – וממשיכים.</p>
-</div>
+  <div class="fu">
+    <div class="eyebrow">
+      <div class="ey-line"></div>
+      <div class="ey-text" id="svcLabel">הכנה לסשן</div>
+    </div>
+    <h1 class="h1" id="heroName">ברוך הבא</h1>
+    <p class="lead">כדי להבטיח תוצאה ברמה הגבוהה ביותר, <strong>חשוב שנתואם ציפיות</strong> לפני שיוצאים לדרך. קריאה קצרה – וממשיכים.</p>
+  </div>
 
-<div class="studio-code fu fu1">
-  <div class="sc-rule">
-    <div class="sc-ico">🎵</div>
-    <div class="sc-body"><strong>תרגול מוקדם:</strong> הגע עם השיר מתורגל ומוכן. קול מוכן הוא קול מנצח. 20 דקות של חימום בבית יחסכו לנו זמן יקר באולפן.</div>
-  </div>
-  <div class="sc-rule">
-    <div class="sc-ico">💧</div>
-    <div class="sc-body"><strong>הקול שלכם זקוק ללחות. שתו מים לפני, והשאירו את האלכוהול לחגיגות שאחרי.</strong> שתה מים לפחות שעה לפני ההגעה. קפה - בסדר, במידה. אלכוהול - <span class="warn">לא מומלץ</span> ביום ההקלטה.</div>
-  </div>
-  <div class="sc-rule">
-    <div class="sc-ico">😴</div>
-    <div class="sc-body"><strong>שנת לילה טובה:</strong> מיתרי הקול הם השריר שלכם. שינה טובה היא הדלק לסשן מוצלח.</div>
-  </div>
-  <div class="sc-rule">
-    <div class="sc-ico">👥</div>
-    <div class="sc-body"><strong>מלווים:</strong> אנחנו רוצים ריכוז מקסימלי. מלווה אחד או שניים זה מעולה, כל עוד הם הקהל השקט והתומך שלכם."<strong>שקטים בלבד</strong> בחדר ההקלטה. אנרגיה רועשת פוגעת בריכוז ובתוצאה.</div>
-  </div>
-  <div class="sc-rule">
-    <div class="sc-ico">🚫</div>
-    <div class="sc-body"><strong>אין מזון בחדר ההקלטה:</strong> שתייה בלבד (ללא אלכוהול). הפסקות לאכילה - בחוץ, בהנאה.</div>
-  </div>
-  <div class="sc-rule">
-    <div class="sc-ico">📱</div>
-    <div class="sc-body"><strong>טלפון בשקט:</strong> בזמן ההקלטה - שקט מוחלט. כולל ווייבריישן.</div>
-  </div>
-  <div class="sc-rule">
-    <div class="sc-ico">⏰</div>
-    <div class="sc-body"><strong>מדיניות ביטול:</strong> יש להודיע <strong>לפחות 24 שעות מראש.</strong> ביטול מאוחר יותר - <span class="warn">50% מחיר החבילה יחויב.</span></div>
-  </div>
-  <div class="sc-rule">
-    <div class="sc-ico">🎛️</div>
-    <div class="sc-body"><strong>קסם הקול:</strong> האולפן יכול לבצע שיפורים טכנולוגיים לקול - אך ככל שהצורך בתיקון גדל, ייתכן פער מהמציאות. ניגיש ככל האפשר = תוצאה טובה יותר.</div>
-  </div>
-</div>
+  <div class="studio-code fu fu1">
+    <div class="sc-rule">
+      <div class="sc-ico">🎵</div>
+      <div class="sc-body">
+        <strong>תרגול מוקדם:</strong> קול מוכן הוא קול מנצח. הגעה עם חומר מתורגל תאפשר לנו להתמקד בביצוע וברגש במקום בתיקון טעויות.
+      </div>
+    </div>
 
-<div class="agree-row fu fu2" id="agreeRow" onclick="toggleAgree()">
-  <div class="agree-box" id="agreeCb"><span class="a-tick">✓</span></div>
-  <div class="agree-lbl">קראתי, הבנתי ואני מסכים לכל חוקי האולפן המפורטים לעיל</div>
-</div>
+    <div class="sc-rule">
+      <div class="sc-ico">💧</div>
+      <div class="sc-body">
+        <strong>הידרציה:</strong> מיתרי הקול זקוקים ללחות. מומלץ לשתות מים כשעה לפני ההקלטה. קפה – במידה, אלכוהול – <span class="warn">לא מומלץ</span> ביום הסשן.
+      </div>
+    </div>
 
-<div class="fu fu3">
-  <button class="cta-red" id="step1Btn" onclick="goStep(2)" disabled>
-    <span>המשך לשלב הבא 🎵</span><span class="cta-arr">←</span>
-  </button>
-  <p style="text-align:center;font-size:0.68rem;color:var(--gray2);margin-top:8px;">יש לאשר את החוקים לפני המעבר לשלב הבא</p>
-</div>
+    <div class="sc-rule">
+      <div class="sc-ico">😴</div>
+      <div class="sc-body">
+        <strong>מנוחה:</strong> מיתרי הקול הם שריר. שנת לילה טובה היא ה"דלק" הכרחי לסשן מוצלח ועוצמתי.
+      </div>
+    </div>
+
+    <div class="sc-rule">
+      <div class="sc-ico">👥</div>
+      <div class="sc-body">
+        <strong>מרחב יצירה:</strong> אנחנו שואפים לריכוז מקסימלי. ניתן להביא עד 2 מלווים, בתנאי שהם מהווים קהל תומך ושקט בתוך חלל ההקלטה.
+      </div>
+    </div>
+
+    <div class="sc-rule">
+      <div class="sc-ico">🚫</div>
+      <div class="sc-body">
+        <strong>תזונה באולפן:</strong> אין להכניס מזון לחדר ההקלטה. שתייה (מים) בלבד. הפסקות אוכל יתקיימו בחלל האירוח.
+      </div>
+    </div>
+
+    <div class="sc-rule">
+      <div class="sc-ico">📱</div>
+      <div class="sc-body">
+        <strong>מצב טיסה:</strong> כדי למנוע רעשים אלקטרומגנטיים והסחות דעת, יש להעביר טלפונים למצב שקט מוחלט (ללא רטט).
+      </div>
+    </div>
+
+    <div class="sc-rule">
+      <div class="sc-ico">⏰</div>
+      <div class="sc-body">
+        <strong>מדיניות ביטולים:</strong> ביטול/דחייה יתבצעו <strong>לפחות 24 שעות מראש</strong>. אי הגעה או ביטול מאוחר יגררו חיוב של <span class="warn">50% מעלות החבילה</span>.
+      </div>
+    </div>
+
+    <div class="sc-rule">
+      <div class="sc-ico">🎛️</div>
+      <div class="sc-body">
+        <strong>אותנטיות וטכנולוגיה:</strong> אנחנו משתמשים בטכנולוגיה המתקדמת ביותר לתיקון קול, אך זכרו: ככל שהביצוע המקורי טוב יותר, התוצאה הסופית תישמע טבעית ומרשימה יותר.
+      </div>
+    </div>
+  </div>
+
+  <div class="agree-row fu fu2" id="agreeRow" onclick="toggleAgree()">
+    <div class="agree-box" id="agreeCb"><span class="a-tick">✓</span></div>
+    <div class="agree-lbl">קראתי, הבנתי ואני מסכים לחוקי האולפן</div>
+  </div>
+
+  <div class="fu fu3">
+    <button class="cta-red" id="step1Btn" onclick="goStep(2)" disabled>
+      <span id="step1BtnTxt">אני מוכן, בואו נתחיל 🎵</span>
+      <span class="cta-arr">←</span>
+    </button>
+    <p style="text-align:center;font-size:0.7rem;color:var(--gray2);margin-top:12px;opacity:0.8;">יש לאשר את התקנון כדי להמשיך</p>
+  </div>
 
 </section>
 
@@ -458,74 +488,98 @@ main{position:relative;z-index:10;padding:150px 24px 80px;max-width:680px;margin
 ══════════════════════════════════════════ -->
 <section class="wizard-step" id="step-2">
 
-<div class="fu">
-  <div class="eyebrow"><div class="ey-line"></div><div class="ey-text">שדרוגים ייחודיים</div></div>
-  <h2 class="h2" id="upsellTitle">בואו ניקח את זה לקצה</h2>
-  <p class="lead" id="upsellLead">הקלטה טובה היא רק הבסיס.הנה כמה דרכים להפוך את הסשן שלכם ל<strong>מוצר מוגמר, מקצועי ובלתי נשכח</strong>.</p>. בחר מה רלוונטי עבורך - ניצור קשר לתיאום מחיר סופי.</p>
-</div>
-
-<div id="upsellCards" class="fu fu1"></div>
-
-<!-- CART SUMMARY -->
-<div class="cart-summary fu fu2" id="cartSummary">
-  <div class="cs-hd">סיכום ההזמנה</div>
-  <div class="cs-row base">
-    <span>חבילה בסיסית - <span id="csBase">₪1,480</span></span>
-    <span id="csBasePkg">Silver</span>
+  <div class="fu">
+    <div class="eyebrow">
+      <div class="ey-line"></div>
+      <div class="ey-text">שדרוגים ייחודיים</div>
+    </div>
+    <h2 class="h2" id="upsellTitle">בואו ניקח את זה לקצה</h2>
+    <p class="lead" id="upsellLead">
+      הקלטה טובה היא רק הבסיס. הנה כמה דרכים להפוך את הסשן שלכם ל<strong>מוצר מוגמר, מקצועי ובלתי נשכח</strong>. 
+      בחר את השדרוגים שמתאימים לך – אנחנו כבר נדאג לכל השאר.
+    </p>
   </div>
-  <div id="csItems"><div class="cs-zero">לא נבחרו שדרוגים עדיין</div></div>
-  <div class="cs-row total">
-    <span>סה"כ משוער</span>
-    <span id="csTotal">₪1,480</span>
-  </div>
-</div>
 
-<div class="fu fu3">
-  <button class="cta-red" id="step2Btn" onclick="submitStep2()">
-    <span id="step2BtnTxt">אני מוכן - המשך לתיאום 🗓</span><span class="cta-arr">←</span>
-  </button>
-</div>
-<span class="skip-link fu fu4" onclick="goStep(3)">דלג על השדרוגים ←</span>
+  <div id="upsellCards" class="fu fu1"></div>
+
+  <div class="cart-summary fu fu2" id="cartSummary">
+    <div class="cs-hd">סיכום הזמנה משוער</div>
+    
+    <div class="cs-row base">
+      <div class="cs-info">
+        <span class="cs-label">חבילה בסיסית</span>
+        <span class="cs-pkg-name" id="csBasePkg">Silver</span>
+      </div>
+      <span class="cs-price" id="csBase">₪1,480</span>
+    </div>
+
+    <div id="csItems">
+      <div class="cs-zero">לא נבחרו שדרוגים עדיין</div>
+    </div>
+
+    <div class="cs-row total">
+      <span>סה"כ משוער</span>
+      <span class="total-amount" id="csTotal">₪1,480</span>
+    </div>
+  </div>
+
+  <div class="fu fu3">
+    <button class="cta-red" id="step2Btn" onclick="submitStep2()">
+      <span id="step2BtnTxt">אני מוכן - המשך לתיאום 🗓</span>
+      <span class="cta-arr">←</span>
+    </button>
+  </div>
+  
+  <div class="skip-wrap fu fu4">
+    <span class="skip-link" onclick="goStep(3)">דלג על השדרוגים והמשך לתיאום ←</span>
+  </div>
 
 </section>
 
-<!-- ══════════════════════════════════════════
-     STEP 3: SCHEDULE
-══════════════════════════════════════════ -->
 <section class="wizard-step" id="step-3">
 
-<div class="success-wrap fu">
-  <div class="success-icon">🎉</div>
-  <h2 class="success-title">זה קורה! נתראה באולפן.</h2>
-  <p class="success-sub">כל הפרטים אצלנו. יקיר יעבור על הכל ויחזור אליך בקרוב לאישור סופי. <strong>עכשיו נשאר רק דבר אחד: לנעול את התאריך ביומן.</strong> לאישור הסשן ולתיאום פרטים סופיים.<br>בינתיים - שריין את התאריך שלך לפני שיילקח.</p>
-</div>
+  <div class="success-wrap fu">
+    <div class="success-icon">🎉</div>
+    <h2 class="success-title">זה קורה! נתראה באולפן.</h2>
+    <p class="success-sub">
+      הפרטים שלך התקבלו במערכת. עכשיו נשאר רק דבר אחד: 
+      <strong>לנעול את התאריך ביומן.</strong> 
+      שריינו לעצמכם את הזמן המדויק ביומן של יקיר כדי להבטיח שהסשן ייצא לדרך.
+    </p>
+  </div>
 
-<div class="fu fu1">
-  <a class="cal-btn" href="https://koalendar.com/e/Studio" target="_blank" rel="noopener">
-    📅 <span>שריין תאריך עכשיו</span>
-  </a>
-  <p class="cal-hint">הדרך המהירה ביותר להבטיח את הסשן שלך.</p>
-</div>
+  <div class="action-grid fu fu1">
+    <div class="cal-card">
+      <a class="cal-btn" href="https://koalendar.com/e/Studio" target="_blank" rel="noopener">
+        📅 <span>שריין תאריך ביומן</span>
+      </a>
+      <p class="cal-hint">הדרך המהירה ביותר להבטיח את המקום שלך.</p>
+    </div>
 
-<div class="fu fu2">
-  <a class="wa-sec" id="waBtnFinal" href="#" target="_blank">
-    💬 <span>שאלה ליקיר בוואטסאפ</span>
-  </a>
-</div>
-
-<!-- WIFI (day-of reminder) -->
-<div class="wifi-box fu fu3" id="wifiBox">
-  <div class="wifi-ico">📶</div>
-  <div class="wifi-info">
-    <div class="wifi-lbl">גולשים באולפן (כי צריך להעלות סטורי)</div>
-    <div class="wifi-val" id="wifiSSID">StudioNet</div>
-    <div class="wifi-pass-row">
-      <span style="font-family:'Rajdhani',sans-serif;font-size:0.55rem;letter-spacing:1px;color:var(--gray2);text-transform:uppercase;">סיסמה:</span>
-      <span class="wifi-pass-val" id="wifiPass">•••••••</span>
-      <button class="wifi-copy-btn" id="wifiRevBtn" onclick="revPass()">הצג</button>
+    <div class="wa-card">
+      <a class="wa-sec" id="waBtnFinal" href="#" target="_blank">
+        💬 <span>שאלה ליקיר ב-WhatsApp</span>
+      </a>
     </div>
   </div>
-</div>
+
+  <div class="wifi-box fu fu3" id="wifiBox">
+    <div class="wifi-ico">📶</div>
+    <div class="wifi-info">
+      <div class="wifi-lbl">גולשים באולפן (כי צריך להעלות סטורי...)</div>
+      <div class="wifi-val" id="wifiSSID">StudioNet</div>
+      <div class="wifi-pass-row">
+        <span class="pass-label">סיסמה:</span>
+        <span class="wifi-pass-val" id="wifiPass">•••••••</span>
+        <button class="wifi-copy-btn" id="wifiRevBtn" onclick="revPass()">הצג</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="final-promo fu fu4">
+    <p>בינתיים, בואו לראות מה קורה מאחורי הקלעים:</p>
+    <a href="https://www.instagram.com/yakircohenproductions/" target="_blank" class="ig-link">@YakirCohenProductions</a>
+  </div>
 
 </section>
 
@@ -546,44 +600,45 @@ const CFG={
 const CM={
   song:{
     label:'הקלטת שיר', tag:'SONG',
-    upsellTitle:'הסשן הוא ההתחלה',
-    upsellLead:'שדרוגים שהופכים הקלטה טובה ל<strong>תוצר שמגיע לקהל</strong>.',
+    upsellTitle:'הסשן הוא רק ההתחלה',
+    upsellLead:'שדרוגים שהופכים הקלטה טובה ל<strong>תוצר מקצועי שמוכן לקהל</strong>.',
     upsells:[
-      {id:'er',     ico:'⚡',  n:'Edit & Receive Now',       d:'לא מחכים לרגע האחרון. עורכים יחד בזמן אמת ויוצאים מהאולפן עם השיר המוכן בכיס. לא ממתינים, לא מחכים - יוצאים עם תוצר מוכן לפרסום.',      p:490, o:null, save:null,  featured:true},
-      {id:'master', ico:'🎚️', n:'מסטרינג מקצועי',            d:'גמר מיקס מאוזן לכל הפלטפורמות. ההבדל בין "בסדר" ל"מקצועי" - 45 דקות שמשנות הכל.',                                             p:290, o:390,  save:'חוסך ₪100', featured:false},
-      {id:'dist',   ico:'🌍',  n:'הפצה לפלטפורמות',            d:'Spotify · Apple Music · YouTube · TikTok ועוד 40+ פלטפורמות. UPC + ISRC כלולים. פעם אחת - לנצח.',                             p:190, o:null, save:null,  featured:false},
+      {id:'er',    ico:'⚡',  n:'Edit & Receive Now',        d:'חוסכים זמן יקר. עורכים יחד בזמן אמת ויוצאים מהאולפן עם השיר המוכן בכיס – ללא המתנה לסיום הסבב.',    p:490, o:null, save:null,  featured:true},
+      {id:'master', ico:'🎚️', n:'סאונד של רדיו (Mastering)',     d:'הליטוש הסופי שמוודא שהשיר יישמע עוצמתי בכל רמקול ובכל פלטפורמה. ההבדל בין חובבני למקצועי.',               p:290, o:390,  save:'חוסך ₪100', featured:false},
+      {id:'dist',   ico:'🌍',  n:'הפצה ל-Spotify ופלטפורמות',      d:'אנחנו נטפל בבירוקרטיה הדיגיטלית (UPC/ISRC) ונעלה אותך למגרש של הגדולים: Apple Music, TikTok ועוד.',           p:190, o:null, save:null,  featured:false},
     ],
   },
   podcast:{
     label:'הקלטת פודקאסט', tag:'PODCAST',
     upsellTitle:'הפרק הוא רק ההתחלה',
-    upsellLead:'הגדל את טווח ההגעה שלך עם <strong>שדרוגים שמביאים מאזינים חדשים</strong>.',
+    upsellLead:'הגדל את החשיפה שלך עם <strong>שדרוגים שמביאים מאזינים חדשים</strong>.',
     upsells:[
-      {id:'edit',   ico:'✂️',  n:'עריכה מלאה + תמלול',        d:'ניקוי רעשים, חיתוכים, מוזיקת רקע + קובץ תמלול Word מוכן. תוצר שמוכן לפרסום ישיר.',                                           p:490, o:590,  save:'חוסך ₪100', featured:true},
-      {id:'teaser', ico:'📹',  n:'טיזר וידאו לפרק',            d:'קליפ 60 שניות לרשתות - הגדיל מינויים ב-40% בממוצע. מוכן לאינסטגרם, TikTok, YouTube.',                                       p:350, o:450,  save:'חוסך ₪100', featured:false},
-      {id:'pdist',  ico:'🌍',  n:'הפצה לפודקאסט',              d:'Spotify, Apple Podcasts, Google Podcasts ועוד. הגדרה מלאה חד-פעמית - כל פרק עתידי עולה אוטומטית.',                           p:150, o:null, save:null,  featured:false},
+      {id:'edit',   ico:'✂️',  n:'עריכה מלאה + תמלול',        d:'ניקוי רעשים, חיתוכים, מוזיקת רקע וקובץ תמלול Word מוכן. יוצאים עם פרק מוכן לפרסום מיידי.',                  p:490, o:590,  save:'חוסך ₪100', featured:true},
+      {id:'teaser', ico:'📹',  n:'טיזר וידאו לרשתות',            d:'קליפ של 60 שניות בפורמט Reels/TikTok – הדרך הטובה ביותר למשוך קהל מהרשתות החברתיות.',               p:350, o:450,  save:'חוסך ₪100', featured:false},
+      {id:'pdist',  ico:'🌍',  n:'הפצה גלובלית',               d:'הגדרה מלאה ב-Spotify, Apple ו-Google Podcasts. הגדרה חד-פעמית שמשמשת אותך לכל הפרקים הבאים.',           p:150, o:null, save:null,  featured:false},
     ],
   },
   voiceover:{
     label:'קריינות', tag:'VO',
-    upsellTitle:'קריינות מקצועית מוכנה לשידור',
-    upsellLead:'שדרוגים שהופכים הקלטה גולמית ל<strong>תוצר מוכן לשימוש מיידי</strong>.',
+    upsellTitle:'קריינות מוכנה לשידור',
+    upsellLead:'שדרוגים שהופכים הקלטה גולמית ל<strong>תוצר שמוכן לשימוש מיידי</strong>.',
     upsells:[
-      {id:'clean',  ico:'🎛️',  n:'ניקוי רעשים + איזון',        d:'הקלטה נקייה לכל פלטפורמה - ברודקאסט, פרסומת, פודקאסט. חובה לכל שימוש מקצועי.',                                               p:190, o:null, save:null,  featured:true},
-      {id:'bgm',    ico:'🎶',  n:'מוסיקת רקע מותאמת',          d:'ספריית מוזיקה מורשית מסונכרנת עם הקריינות שלך. מוכן לשידור.',                                                                p:250, o:null, save:null,  featured:false},
+      {id:'clean',  ico:'🎛️',  n:'ניקוי רעשים ומיקס',         d:'הקלטה נקייה, מאוזנת ומלוטשת לכל פלטפורמה – ברודקאסט, פרסומות או פודקאסטים. חובה לכל שימוש מקצועי.',                 p:190, o:null, save:null,  featured:true},
+      {id:'bgm',    ico:'🎶',  n:'מוזיקת רקע מורשית',           d:'התאמת מוזיקה מספרייה מקצועית (כולל רישיון שידור) וסנכרון מושלם עם הקריינות שלך.',                               p:250, o:null, save:null,  featured:false},
     ],
   },
   kids:{
-    label:'הקלטת בר/בת מצווה', tag:'BAR/BAT',
-    upsellTitle:'רגע אחד - לנצח',
-    upsellLead:'שדרוגים שהופכים את האירוע ל<strong>זיכרון שלא יישכח לעולם</strong>.',
+    label:'בר/בת מצווה', tag:'BAR/BAT',
+    upsellTitle:'מזכרת לכל החיים',
+    upsellLead:'שדרוגים שהופכים את ההקלטה ל<strong>חוויה מרגשת ובלתי נשכחת</strong>.',
     upsells:[
-      {id:'drasha',  ico:'📜',  n:'הוספת דרשה מרגשת לאירוע',   d:'הופכים את הדרשה לרגע קולנועי. הקלטה מרגשת ונקייה שתהיה הלב של האירוע שלכם. הכי נבחר בחתונות ובני מצווה.',                           p:550, o:750,  save:'חוסך ₪200', featured:true},
-      {id:'memclip', ico:'🎬',  n:'קליפ זיכרון מהסשן',          d:'הסרטון שכולם יחלקו. קליפ 'מאחורי הקלעים' חווייתי מהאולפן, מוכן לשיתוף בוואטסאפ וברשתות. 92% מהלקוחות שלנו בוחרים בזה.',                                  p:350, o:450,  save:'חוסך ₪100', featured:false},
-      {id:'entrance',ico:'🎵',  n:'שיר כניסה מותאם אישית',      d:'הקלטת שיר כניסה ייחודי לאירוע - מרגש, אישי, בלתי נשכח.',                                                                    p:280, o:null, save:null,  featured:false},
+      {id:'drasha',  ico:'📜',  n:'הקלטת דרשה מרגשת',   d:'הופכים את המילים לרגע קולנועי עם מוזיקת רקע מותאמת אישית, שתיצור שקט של התרגשות בקהל בזמן האירוע.',           p:550, o:750,  save:'חוסך ₪200', featured:true},
+      {id:'memclip', ico:'🎬',  n:'קליפ זיכרון מהאולפן',          d:'קליפ "מאחורי הקלעים" חווייתי ומרגש מהסשן. המזכרת המושלמת לשיתוף בוואטסאפ וברשתות.',                 p:350, o:450,  save:'חוסך ₪100', featured:false},
+      {id:'entrance',ico:'🎵',  n:'שיר כניסה ייחודי',          d:'עיבוד אישי (שינוי מילים/לחן מחודש) שהופך את הכניסה לאולם לרגע עוצמתי ואישי.',                                p:280, o:null, save:null,  featured:false},
     ],
   },
 };
+</script>
 
 /* ══ URL PARAMS ══ */
 const gp=k=>{const v=new URLSearchParams(location.search).get(k);return v?decodeURIComponent(v):null;};
@@ -633,7 +688,7 @@ function init(){
   document.getElementById('csBasePkg').textContent=P.pkg;
 
   // Step 3
-  const waFinal=`היי יקיר! 👋 אני ${P.name}. עברתי את הפורטל - יש לי שאלה קטנה...`;
+  const waFinal=`היי יקיר! 👋 אני ${P.name}. עברתי על הפורטל, ויש לי שאלה קטנה...`;
   document.getElementById('waBtnFinal').href=`https://wa.me/${CFG.WA}?text=${encodeURIComponent(waFinal)}`;
   document.getElementById('wifiSSID').textContent=P.wifi[0]||'StudioNet';
 
@@ -643,6 +698,16 @@ function init(){
 
 /* ══ WIZARD STEPS ══ */
 function goStep(n){
+  // מניעת מעבר לשלב 2 ללא אישור + הפעלת אנימציית ניעור (Shake)
+  if(n===2 && !STATE.agreed){
+    toast('יש לאשר את חוקי האולפן כדי להמשיך');
+    const btn=document.getElementById('step1Btn');
+    btn.style.animation='none';
+    btn.offsetHeight; // trigger reflow
+    btn.style.animation='shake 0.4s ease';
+    return;
+  }
+
   [1,2,3].forEach(i=>{
     document.getElementById('step-'+i).classList.toggle('active', i===n);
   });
@@ -672,7 +737,7 @@ function buildUpsells(){
     <div class="upsell ${u.featured?'featured':''}" id="up_${u.id}">
       <div class="u-ico">${u.ico}</div>
       <div class="u-body">
-        ${u.featured?`<div class="u-feat-badge">⭐ הכי פופולרי</div>`:''}
+        ${u.featured?`<div class="u-feat-badge">⭐ המלצת האולפן</div>`:''}
         <div class="u-name">${u.n}</div>
         <div class="u-desc">${u.d}</div>
         <div class="u-foot">
